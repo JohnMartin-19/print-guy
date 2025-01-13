@@ -1,0 +1,28 @@
+.count-up-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    font-size: 2rem;
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #354d7d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .count {
+    font-size: 48px;
+    font-weight: bold;
+    color: #3498db;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #555;
+  }
+  

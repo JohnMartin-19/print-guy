@@ -3,6 +3,8 @@ import { motion} from 'framer-motion';
 import "./Home.css";
 import Products  from "../components/Products";
 import CustomerCarousel from "../components/Customers";
+import CountUpCard from "../components/CountCrd";
+
 const Home = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -42,31 +44,40 @@ const Home = () => {
   };
 
   return (
+
+    <motion.section initial="hidden"
+    animate="visible"
+    variants={containerVariants}>
+    {/* Hero Section */}
+    <motion.section className="hero" variants={containerVariants}>
+      <motion.h1 variants={itemVariants}>Welcome to Printguy Limited</motion.h1>
+      <motion.p variants={itemVariants}>
+        Your One-Stop Advertising Solution!
+      </motion.p>
+     
+      <motion.h2 variants={itemVariants}>
+      At Printguy Limited, we bring your business to life with exceptional advertising solutions.
+      </motion.h2>
+      <motion.a
+        href="/services"
+        className="cta-button"
+        variants={itemVariants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Learn More
+      </motion.a>
+    </motion.section>
+
     <motion.section
       className="landing-page"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      {/* Hero Section */}
-      <motion.section className="hero" variants={containerVariants}>
-        <motion.h1 variants={itemVariants}>Welcome to Printguy Limited</motion.h1>
-        <motion.p variants={itemVariants}>
-          Your One-Stop Advertising Solution!
-        </motion.p>
-        <motion.a
-          href="/services"
-          className="cta-button"
-          variants={itemVariants}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Learn More
-        </motion.a>
-      </motion.section>
-
+      
       {/* Section 1: Welcome */}
-      <motion.section className="split-section">
+      {/* <motion.section className="split-section">
       <motion.div
           className="image-content"
           initial="hidden"
@@ -93,40 +104,33 @@ const Home = () => {
           </p>
         </motion.div>
         
-      </motion.section>
+      </motion.section> */}
 
       {/* Section 2: Our Story */}
-      <motion.section className="split-section reverse">
+      <motion.section className="split-section">
         <motion.div
-          className="image-content"
+          className=""
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <img src="our-story-image.jpg" alt="Our Story" />
-        </motion.div>
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInRightVariants}
-        >
-          <h2>Our Story</h2>
-          <p>
-            When we first started 20yrs ago, we were intrigued by the amount of businesses
-            that didn’t have proper presentation. From the very beginning, we believed in our
-            customers’ potential to connect with their ideal audience. With our passion for
-            creativity and the belief in Visual communication, we transformed the faces of
-            brands. Marketing is more than just business, it’s community. At Printguy Limited
-            we believe in lasting relationships. We bring more than just state of the art
-            equipment; we bring an experienced team of professionals who are committed to
-            making your brand a success.
-          </p>
+           <h2 style={{  lineHeight: "2", textAlign: "center" }}>Our Story</h2>
+              <p>
+                When we first started 20 years ago, we were intrigued by the number of businesses
+                that didn’t have proper presentation. From the very beginning, we believed in our
+                customers’ potential to connect with their ideal audience. With our passion for
+                creativity and belief in visual communication, we transformed the faces of brands. 
+                Marketing is more than just business; it’s community. At Printguy Limited, we believe 
+                in lasting relationships. We bring more than just state-of-the-art equipment; we bring
+                an experienced team of professionals committed to making your brand a success.
+              </p>  
+         
         </motion.div>
       </motion.section>
 
+
+     
       {/* Section 3: Our Mission */}
       <motion.section className="split-section">
         <motion.div
@@ -135,6 +139,7 @@ const Home = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInRightVariants}
+          
         >
           <img src="mission-image.jpg" alt="Our Mission" />
         </motion.div>
@@ -160,11 +165,85 @@ const Home = () => {
         </motion.div>
       </motion.section>
 
+      {/* Section 4: Our vision */}
+      <motion.section className="split-section">
+        
+        <motion.div
+          className="text-content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInVariants}
+        >
+          <h2>Our Vision</h2>
+          <p>
+          To set you up for greater success by providing innovative, high quality and
+          impactful solutions.Our vision is to shape the future of advertising by consistently exceeding
+          expectations and driving success for our clients. We aspire to:
+          </p>
+          <ul>
+            <li>Set new benchmarks in design and branding excellence.</li>
+            <li>Foster long-lasting relationships with our clients based on trust and results.</li>
+            <li>Embrace cutting-edge technology to deliver superior products and services.</li>
+            <li>Inspire creativity and innovation in every project we undertake.</li>
+          </ul>
+        </motion.div>
+
+        <motion.div
+          className="image-content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInRightVariants}
+        >
+          <img src="vission-image.jpg" alt="Our Vision" />
+        </motion.div>
+
+      </motion.section>
+
+
+      {/* Section 4: Our Objectives */}
+      <motion.section className="split-section">
+        
+      <motion.div
+          className="image-content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInRightVariants}
+        >
+          <img src="objective-image.jpg" alt="Our Objective" />
+        </motion.div>
+
+        <motion.div
+          className="text-content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInVariants}
+        >
+          <h2>Our Objective</h2>
+          <p>
+          At Printguy Limited, our objective is to deliver services that exceed customer
+          expectations. To continuously improve our processes and adopt the latest
+          technologies to stay ahead in the advertising industry. We are committed to leading
+          the market by setting new standards of excellence, while maintaining sustainability
+          through eco-friendly practices. Our goal is to serve an even broader client base
+          while maintaining superior service quality.
+          </p>
+          
+        </motion.div>
+
+        
+
+      </motion.section>
+
     {/* Products Section */}
     <Products />
 
     {/* Customer Carousel Section */}
     <CustomerCarousel />
+    </motion.section>
     </motion.section>
   );
 };

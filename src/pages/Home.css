@@ -5,7 +5,7 @@ body {
 }
 
 .landing-page {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   padding: 2rem 0;
 }
@@ -67,10 +67,6 @@ p {
   gap: 2rem;
 }
 
-.split-section.reverse {
-  flex-direction: row-reverse;
-}
-
 .text-content {
   flex: 1;
   padding: 1rem;
@@ -82,7 +78,7 @@ p {
 }
 
 .text-content p, .text-content ul {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .text-content ul {
@@ -98,4 +94,76 @@ p {
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.split-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  font-size: 1.5rem; /* Makes the section take full viewport height */
+  
+}
+
+
+.split-section h2{
+  align-items: center;
+}
+
+.story-container {
+  text-align: justify;
+  min-width: 450px;
+  max-width: 800px; /* Optional: Set a max width for the content */
+  margin: 0 auto;
+  
+ 
+}
+
+.story-container p{
+  text-align: justify;
+  max-width: 800px; /* Optional: Set a max width for the content */
+  font-size: 2rem;
+}
+
+.text-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.text-content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+
+.content-wrapper {
+  display: flex;
+  width: 80%; /* Adjust width as necessary */
+  justify-content: space-between;
+}
+
+.card-content, .text-content {
+  width: 50%; 
+  font-size: 2rem;/* Each section takes up 48% of the width */
+}
+
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack the sections vertically on smaller screens */
+  }
+
+  .card-content, .text-content {
+    width: 100%; /* Make each section take the full width on mobile */
+    margin-bottom: 20px; /* Add some space between sections */
+  }
 }

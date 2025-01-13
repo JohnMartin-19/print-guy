@@ -1,13 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Customer.css";
+import Oracle from '../assets/Oracle logo PNG.jpeg'
+
 
 const customerLogos = [
   "safaricom-logo.png",
   "airtel-logo.png",
   "cocacola-logo.png",
   "microsoft-logo.png",
-  "oracle-logo.png",
+  Oracle,
   "google-logo.png",
   "uon-logo.png",
   "absa-logo.png",
@@ -30,7 +32,8 @@ const CustomerCarousel = () => {
       >
         {customerLogos.map((logo, index) => (
           <div key={index} className="carousel-item">
-            <img src={`./assets/${logo}`} alt={`Customer ${index + 1}`} />
+            src={typeof logo === "string" ? require(`../assets/${logo}`) : logo}
+            <img src={typeof logo === "string" ? require(`../assets/${logo}`) : logo} alt={`Customer ${index + 1}`} />
           </div>
         ))}
       </motion.div>
