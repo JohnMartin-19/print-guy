@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #002060; /* Navy blue */
+    padding: 1rem 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
