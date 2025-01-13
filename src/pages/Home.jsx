@@ -2,6 +2,7 @@ import React from "react";
 import { motion} from 'framer-motion';
 import "./Home.css";
 import Products  from "../components/Products";
+import CustomerCarousel from "../components/Customers";
 const Home = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -161,6 +162,9 @@ const Home = () => {
 
     {/* Products Section */}
     <Products />
+
+    {/* Customer Carousel Section */}
+    <CustomerCarousel />
     </motion.section>
   );
 };

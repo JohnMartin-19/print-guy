@@ -1,6 +1,7 @@
 .navbar {
     background-color: #002060; /* Navy blue */
     padding: 1rem 0;
+    font-size: 1.5rem;
   }
   
   .nav-links {
@@ -13,5 +14,6 @@
   .nav-links a {
     color: #fff;
     text-decoration: none;
+    
   }
   
