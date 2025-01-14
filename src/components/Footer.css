@@ -1,5 +1,5 @@
 .footer {
-  background-color: #f7941d; /* Orange */
+  background: linear-gradient(to top, #f7941d, rgba(247, 145, 25, 0.5)); /* Orange */
   color: #fff;
   text-align: center;
   padding: 2rem 0;
@@ -15,7 +15,7 @@
 }
 
 .footer-details {
-  width: 100%;
+  width: 80%;
 }
 
 .footer-row {
@@ -39,6 +39,7 @@
 .footer-brand {
   font-size: 1.2rem;
   font-weight: bold;
+ 
 }
 
 .footer-brand .heart {

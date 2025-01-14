@@ -3,8 +3,12 @@ import { motion} from 'framer-motion';
 import "./Home.css";
 import Products  from "../components/Products";
 import CustomerCarousel from "../components/Customers";
-import CountUpCard from "../components/CountCrd";
 import Oracle from "../assets/Oracle logo PNG.jpeg"
+import print from "../assets/printg.jpg"
+
+
+
+
 const Home = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -210,16 +214,6 @@ const Home = () => {
       {/* Section 4: Our Objectives */}
       <motion.section className="split-section">
         
-      <motion.div
-          className="image-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInRightVariants}
-        >
-          <img src="objective-image.jpg" alt="Our Objective" />
-        </motion.div>
-
         <motion.div
           className="text-content"
           initial="hidden"
@@ -227,7 +221,7 @@ const Home = () => {
           viewport={{ once: true }}
           variants={fadeInVariants}
         >
-          <h2>Our Objective</h2>
+          <h2 style={{textAlign: "center"}}>Our Objective</h2>
           <p>
           At Printguy Limited, our objective is to deliver services that exceed customer
           expectations. To continuously improve our processes and adopt the latest
