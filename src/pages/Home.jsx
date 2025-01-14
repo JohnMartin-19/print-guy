@@ -4,7 +4,7 @@ import "./Home.css";
 import Products  from "../components/Products";
 import CustomerCarousel from "../components/Customers";
 import CountUpCard from "../components/CountCrd";
-
+import Oracle from "../assets/Oracle logo PNG.jpeg"
 const Home = () => {
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -140,8 +140,19 @@ const Home = () => {
           viewport={{ once: true }}
           variants={fadeInRightVariants}
           
-        >
-          <img src="mission-image.jpg" alt="Our Mission" />
+        > 
+        <h2>Our Vision</h2>
+        <p>
+        To set you up for greater success by providing innovative, high quality and
+        impactful solutions.Our vision is to shape the future of advertising by consistently exceeding
+        expectations and driving success for our clients. We aspire to:
+        </p>
+        <ul>
+          <li>Set new benchmarks in design and branding excellence.</li>
+          <li>Foster long-lasting relationships with our clients based on trust and results.</li>
+          <li>Embrace cutting-edge technology to deliver superior products and services.</li>
+          <li>Inspire creativity and innovation in every project we undertake.</li>
+        </ul>
         </motion.div>
 
         <motion.div
@@ -165,42 +176,7 @@ const Home = () => {
         </motion.div>
       </motion.section>
 
-      {/* Section 4: Our vision */}
-      <motion.section className="split-section">
-        
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInVariants}
-        >
-          <h2>Our Vision</h2>
-          <p>
-          To set you up for greater success by providing innovative, high quality and
-          impactful solutions.Our vision is to shape the future of advertising by consistently exceeding
-          expectations and driving success for our clients. We aspire to:
-          </p>
-          <ul>
-            <li>Set new benchmarks in design and branding excellence.</li>
-            <li>Foster long-lasting relationships with our clients based on trust and results.</li>
-            <li>Embrace cutting-edge technology to deliver superior products and services.</li>
-            <li>Inspire creativity and innovation in every project we undertake.</li>
-          </ul>
-        </motion.div>
-
-        <motion.div
-          className="image-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInRightVariants}
-        >
-          <img src="vission-image.jpg" alt="Our Vision" />
-        </motion.div>
-
-      </motion.section>
-
+      
 
       {/* Section 4: Our Objectives */}
       <motion.section className="split-section">

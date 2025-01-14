@@ -1,12 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Products.css";
+import Oracle from "../assets/Oracle logo PNG.jpeg"
+
+
 
 const productsData = [
   {
     title: "Business Cards",
     description: "Create a lasting impression with custom-designed cards.",
-    image: "business-cards.jpg",
+    image: Oracle,
   },
   {
     title: "Brochures & Flyers",
