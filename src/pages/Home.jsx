@@ -67,6 +67,35 @@ const Home = () => {
       >
         Learn More
       </motion.a>
+      <motion.p
+          className="content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInRightVariants}
+        >
+      <div className="row">
+        <div className="column">
+          <h2>20+</h2>
+          <p>
+            Years of Experience
+          </p>
+        </div>
+        <div className="column">
+          <h2>1000+</h2>
+          <p>
+            Completed Projects
+          </p>
+        </div>
+        <div className="column">
+          <h2>100%</h2>
+          <p>
+            Quality Service.
+          </p>
+        </div>
+      </div>
+
+      </motion.p>
     </motion.section>
 
     <motion.section
@@ -109,7 +138,7 @@ const Home = () => {
       {/* Section 2: Our Story */}
       <motion.section className="split-section">
         <motion.div
-          className=""
+          className="text-content"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -134,7 +163,7 @@ const Home = () => {
       {/* Section 3: Our Mission */}
       <motion.section className="split-section">
         <motion.div
-          className="image-content"
+          className="text-content"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
