@@ -1,8 +1,6 @@
 import React from "react";
 import "./Services.css";
-import { motion} from 'framer-motion';
-import { Button, Modal} from "flowbite-react";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const containerVariants = {
@@ -20,86 +18,74 @@ const Services = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   };
-
-  const fadeInVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeInOut" },
-    },
-  };
-
-  const fadeInRightVariants = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeInOut" },
-    },
-  };
-
-  const [openModal, setOpenModal] = useState(true);
-  const [modalPlacement, setModalPlacement] = useState('center')
-
 
   return (
-    
-    <section className="services">
+    <section className="services" style={{ height: "75vh" }}>
+      <motion.div
+        className="services-container"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <h2 className="services-title">Our Services</h2>
+        <div className="services-grid">
+          {/* Graphic Design Card */}
+          <motion.div className="service-card" variants={itemVariants}>
+            <h3>Graphic Design</h3>
+            <p>
+              Our talented graphic designers transform your concepts into visually stunning
+              designs. From logos to marketing materials, we ensure your brand stands out with
+              creativity and professionalism.
+            </p>
+          </motion.div>
 
-      
+          {/* Printing Solutions Card */}
+          <motion.div className="service-card" variants={itemVariants}>
+            <h3>Printing Solutions</h3>
+            <p>
+              <strong>Digital Printing:</strong> Fast, high-quality, and customizable printing for all your needs.
+              <br />
+              <strong>Offset Printing:</strong> Cost-effective solutions for large-volume print jobs with precise detail.
+              <br />
+              <strong>Large Format Printing:</strong> Eye-catching banners, posters, and more to amplify your
+              brand’s presence.
+              <br />
+              <strong>Wide Format Printing:</strong> Perfect for large-scale projects like murals, building wraps,
+              and oversized signage to make a bold statement.
+            </p>
+          </motion.div>
 
+          {/* Signage Card */}
+          <motion.div className="service-card" variants={itemVariants}>
+            <h3>Signage</h3>
+            <p>
+              We craft captivating signage to make your business impossible to ignore:
+              <br />
+              <strong>Aluminum Chanellium 3D Signs:</strong> Durable, elegant, and attention-grabbing 3D signs.
+              <br />
+              <strong>LED Light Box Signs:</strong> Bright and vibrant signage that lights up your message.
+            </p>
+          </motion.div>
 
-      <motion.section className="split-section">
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInVariants}
-        >
-           <h2 style={{  lineHeight: "2", textAlign: "center" }}>Our Services</h2>
-           <div className="service-cards">
-        <div className="card">
-          <h3>3D Printing</h3>
-          <p>High-quality 3D printing for all your needs.</p>
+          {/* Branding Card */}
+          <motion.div className="service-card" variants={itemVariants}>
+            <h3>Branding</h3>
+            <p>
+              Turn your business into a visual powerhouse with our custom branding services:
+              <br />
+              <strong>Vehicle Branding:</strong> Transform your fleet into mobile billboards.
+              <br />
+              <strong>Wall Branding:</strong> Make your spaces reflect your brand’s identity.
+              <br />
+              <strong>Custom Branding:</strong> From merchandise to interior décor, we’ve got you covered.
+            </p>
+          </motion.div>
         </div>
-        <div className="card">
-          <h3>2D Printing</h3>
-          <p>Business cards, flyers, and banners.</p>
-        </div>
-        <div className="card">
-          <h3>Vehicle Wraps</h3>
-          <p>Custom vehicle wraps to advertise your business.</p>
-        </div>
-      </div>
-
-      <div className="service-cards">
-        <div className="card">
-          <h3>3D Printing</h3>
-          <p>High-quality 3D printing for all your needs.</p>
-          <Button>Toggle modal</Button>
-        </div>
-        <div className="card">
-          <h3>2D Printing</h3>
-          <p>Business cards, flyers, and banners.</p>
-        </div>
-        {/* <div className="card">
-          <h3>Vehicle Wraps</h3>
-          <p>Custom vehicle wraps to advertise your business.</p>
-        </div> */}
-      </div>
-
-
-     
-         
-        </motion.div>
-      </motion.section>
-  
-    </section> 
+      </motion.div>
+    </section>
   );
 };
 
