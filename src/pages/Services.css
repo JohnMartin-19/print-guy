@@ -40,13 +40,74 @@
 }
 
 .service-card h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #0056b3;
+  color: #002060;
 }
 
 .service-card p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+}
+
+.our-work {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.work-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.work-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: top 0.4s ease;
+}
+
+.work-card:hover .overlay {
+  top: 0;
 }
