@@ -1,6 +1,6 @@
 .footer {
   background: linear-gradient(to top, #f7941d, rgba(247, 145, 25, 0.5)); /* Orange */
-  color: #fff;
+  color: #002060;
   text-align: center;
   padding: 2rem 0;
   font-family: Arial, sans-serif;
@@ -43,6 +43,40 @@
 }
 
 .footer-brand .heart {
-  color: #ff6f61; /* Heart color */
+  color: #002060; /* Heart color */
   font-size: 1.5rem;
+}
+
+.social-links {
+  text-align: center;
+}
+
+.social-links h3 {
+  margin-bottom: 0.5rem;
+  color: #002060;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icons a {
+  font-size: 1.5rem;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icons a:hover {
+  color: #002060;
+  transform: scale(1.2);
+}
+
+.footer-line {
+  width: 80%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 1rem auto;
+  transform-origin: left;
 }

@@ -241,7 +241,7 @@ const Home = () => {
     <Products />
 
     {/* Customer Carousel Section */}
-    <CustomerCarousel />
+    {/* <CustomerCarousel /> */}
     </motion.section>
     </motion.section>
   );

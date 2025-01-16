@@ -32,7 +32,7 @@ const About = () => {
       >
        
         <div className="about-content">
-          <h2>Welcome to Printguy Limited – Your One-Stop Advertising Solution!</h2>
+          <h2>About Us</h2>
           <p>
             At Printguy Limited, we specialize in bringing brands to life through exceptional advertising 
             and creative solutions. As a leading advertising agency with over two decades of experience, 
