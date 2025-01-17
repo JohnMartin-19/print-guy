@@ -56,11 +56,11 @@ const Home = () => {
     <motion.section className="hero" variants={containerVariants}>
       <motion.h1 variants={itemVariants}>Welcome to Printguy Limited</motion.h1>
       <motion.p variants={itemVariants}>
-        Your One-Stop Advertising Solution!
+      <small><i>Your One-Stop Advertising Solution!</i></small>
       </motion.p>
      
       <motion.h2 variants={itemVariants}>
-      At Printguy Limited, we bring your business to life with exceptional advertising solutions.
+      {/* At Printguy Limited, we bring your business to life with exceptional advertising solutions. */}
       </motion.h2>
       <motion.a
         href="/services"

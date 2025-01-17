@@ -80,7 +80,7 @@ const Footer = () => {
           </p>
           </strong>
           <p>
-            &copy; {new Date().getFullYear()} Printguy. All rights reserved.
+            <h6>&copy; {new Date().getFullYear()} Printguy. All rights reserved.</h6>
           </p>
         </motion.div>
       </div>
