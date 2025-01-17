@@ -258,3 +258,43 @@ p {
     padding: 0.8rem 1.5rem;
   }
 }
+
+/* Floating WhatsApp Icon */
+.whatsapp_float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp_float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-icon {
+  font-size: 24px;
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 767px) {
+  .whatsapp_float {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .whatsapp-icon {
+    font-size: 20px;
+  }
+}

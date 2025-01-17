@@ -2,10 +2,8 @@ import React from "react";
 import { motion} from 'framer-motion';
 import "./Home.css";
 import Products  from "../components/Products";
-
-
-
-
+import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Home = () => {
   const containerVariants = {
@@ -67,7 +65,8 @@ const Home = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        Learn More
+        <li style={{listStyle:"none"}}><Link to="/services"/> Learn More</li>
+       
       </motion.a>
       <motion.p
           className="content"
@@ -107,35 +106,7 @@ const Home = () => {
       variants={containerVariants}
     >
       
-      {/* Section 1: Welcome */}
-      {/* <motion.section className="split-section">
-      <motion.div
-          className="image-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInRightVariants}
-        >
-          <img src="welcome-image.jpg" alt="Welcome to Printguy" />
-        </motion.div>
-
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInVariants}
-        >
-          <h2>Welcome to Printguy Limited</h2>
-          <p>
-            Your One-Stop Advertising Solution! At Printguy Limited, we bring your business to life
-            with exceptional advertising solutions. As a leading advertising agency, we specialize
-            in creating high-quality designs and customized branding materials to elevate your brand’s
-            visibility and impact.
-          </p>
-        </motion.div>
-        
-      </motion.section> */}
+     
 
       {/* Section 2: Our Story */}
       <motion.section className="split-section">
@@ -237,6 +208,16 @@ const Home = () => {
 
     {/* Products Section */}
     <Products />
+    {/* WhatsApp icon */}
+    {/* WhatsApp icon */}
+    <a
+      href="https://wa.me/254768171426"
+      className="whatsapp_float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <FaWhatsapp className="whatsapp-icon" />
+    </a>
 
     {/* Customer Carousel Section */}
     {/* <CustomerCarousel /> */}
