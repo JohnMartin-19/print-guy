@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok } from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import "./Footer.css";
 
 const Footer = () => {
@@ -15,7 +17,7 @@ const Footer = () => {
         >
           <div className="footer-row">
             <div>
-              <h3>Location</h3>
+              <h3> <span><FontAwesomeIcon icon={faLocationDot} /></span> Location</h3>
               <p>
                 Gaberone Plaza,
                 <br />
@@ -25,16 +27,21 @@ const Footer = () => {
               </p>
             </div>
             <div>
-              <h3>Contacts</h3>
+              <h3><span className="icon">&#x260E;</span>Contacts</h3>
               <p>
-                <span className="icon">&#x260E;</span> (+254) 0722333850 | (+254) 0722981403
+                 (+254) 0722333850 
+                 <br />
+                  (+254) 0722981403
               </p>
             </div>
             <div>
-              <h3>Email</h3>
+              <h3><span className="icon">&#x2709;</span>Email</h3>
               <p>
-                <span className="icon">&#x2709;</span> hello@printguy.co.ke | www.printguy.co.ke
+                <a href="mailto:hello@printguy.co.ke">hello@printguy.co.ke</a> 
+                <br />
+                 www.printguy.co.ke
               </p>
+
             </div>
             <motion.div
               className="social-links"
@@ -42,13 +49,17 @@ const Footer = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h3>Follow Us</h3>
+              <h3 style={{marginBottom:"30px"}}>Follow Us</h3>
               <div className="icons">
                 <a href="https://facebook.com" target="_blank" rel="noreferrer">
                   <FaFacebookF />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noreferrer">
                   <FaInstagram />
+                  </a>
+                  <a href="https://tiktok.com" target="_blank" rel="noreferrer">
+                  <FaTiktok />
+                
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noreferrer">
                   <FaTwitter />

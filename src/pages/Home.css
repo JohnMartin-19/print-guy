@@ -25,7 +25,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 65vh; /* 65% of the viewport height */
+  min-height: 65vh; /* 65% of the viewport height */
   width: 100%; /* Full width */
   text-align: center;
   padding: 4rem 0;
@@ -128,7 +128,7 @@ p {
   margin: 2rem auto; /* Center the row and add vertical spacing */
   width: 100%; /* Full width of the container */
   overflow-x: auto; /* Allow horizontal scrolling if needed */
-  flex-wrap: nowrap; /* Prevent wrapping */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */ 
   box-sizing: border-box;
 }
 
@@ -166,10 +166,6 @@ p {
 
 /* Media query for tablets (768px and below) */
 @media (max-width: 768px) {
-  .row {
-    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
-  }
-
   .column {
     flex: 1 0 50%; /* Two columns per row */
     max-width: calc(50% - 1rem);
@@ -180,10 +176,9 @@ p {
 @media (max-width: 480px) {
   .column {
     flex: 1 0 100%; /* Full width for each column */
-    max-width: 100%;
+    width: 100%;
   }
 }
-
 /* Media Queries */
 
 /* Large screens */
@@ -225,29 +220,17 @@ p {
   }
   .row {
     display: flex;
-    flex-wrap: nowrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: center;
     gap: 2rem;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     margin: 2rem auto;
   }
 }
 
 /* Small screens */
 @media (max-width: 768px) {
-  .row {
-    display: flex;
-    flex-wrap: nowrap; /* Allow wrapping for smaller screens */
-    justify-content: center;
-    gap: 2rem;
-    width: 80%;
-    margin: 2rem auto;
-  }
-
-  .column {
-    flex: 1 1 calc(50% - 1rem); /* Two columns */
-    max-width: calc(50% - 1rem);
-  }
 
   .hero h1 {
     font-size: 3rem;
@@ -260,18 +243,7 @@ p {
 
 /* Extra-small screens */
 @media (max-width: 480px) {
-  .row {
-    display: flex;
-    flex-wrap: nowrap; /* Allow wrapping for smaller screens */
-    justify-content: center;
-    gap: 2rem;
-    width: 80%;
-    margin: 2rem auto;
-  }
-  .column {
-    flex: 1 1 100%; /* Single column */
-    max-width: 100%;
-  }
+
 
   .hero h1 {
     font-size: 2rem;

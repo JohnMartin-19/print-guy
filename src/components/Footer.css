@@ -39,7 +39,6 @@
 .footer-brand {
   font-size: 1.2rem;
   font-weight: bold;
- 
 }
 
 .footer-brand .heart {
@@ -79,4 +78,23 @@
   background-color: #ccc;
   margin: 1rem auto;
   transform-origin: left;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column; /* Stack the columns vertically */
+    align-items: flex-start;
+    text-align: left;
+    align-items: center;
+  }
+  
+  .footer-details {
+    width: 100%;
+    align-items: center; /* Ensure footer details span full width on smaller screens */
+  }
+  
+  .social-links {
+    margin-top: 1rem;
+  }
 }

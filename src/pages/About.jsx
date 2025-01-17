@@ -6,15 +6,15 @@ import pg2 from "../assets/pg2.jpg";
 import pg3 from "../assets/pg3.jpg";
 
 const About = () => {
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1 } },
-  };
+  // const fadeIn = {
+  //   hidden: { opacity: 0 },
+  //   visible: { opacity: 1, transition: { duration: 1 } },
+  // };
 
-  const slideIn = {
-    hidden: { x: -100, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
-  };
+  // const slideIn = {
+  //   hidden: { x: -100, opacity: 0 },
+  //   visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+  // };
 
   const zoomIn = {
     hidden: { scale: 0.8, opacity: 0 },

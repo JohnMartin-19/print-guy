@@ -41,8 +41,8 @@ const Services = () => {
   ];
 
   return (
-    <>
-      <section className="services" style={{ height: "55vh" }}>
+    <div style={{minHeight:"100%"}}>
+      <section className="services" >
         <motion.div
           className="services-container"
           initial="hidden"
@@ -148,7 +148,7 @@ const Services = () => {
       </motion.div>
     </section>
       
-    </>
+    </div>
   );
 };
 

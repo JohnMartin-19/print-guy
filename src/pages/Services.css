@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  
   overflow-y: auto;
 }
 
@@ -110,4 +109,44 @@
 
 .work-card:hover .overlay {
   top: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .work-container {
+    width: 90%;
+  }
+
+  .work-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title,
+  .work-title {
+    font-size: 1.8rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  .work-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .work-gallery {
+    gap: 0.5rem;
+  }
 }

@@ -2,9 +2,7 @@ import React from "react";
 import { motion} from 'framer-motion';
 import "./Home.css";
 import Products  from "../components/Products";
-import CustomerCarousel from "../components/Customers";
-import Oracle from "../assets/Oracle logo PNG.jpeg"
-import print from "../assets/printg.jpg"
+
 
 
 
