@@ -1,39 +1,57 @@
-/* Base styles */
+/* Align logo to the far left */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  margin-right: auto; /* Push everything else to the right */
+}
+
+.logo-image {
+  max-height: 100px; /* Adjust size as needed */
+  width: auto;
+  float: none; /* Remove float */
+}
+
 .navbar {
   background-color: #002060; /* Navy blue */
   padding: 1rem; /* Apply padding to all sides */
   font-size: 1.5rem;
   position: relative;
+  max-height: 110px;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
 }
 
 .navbar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem; 
-}
-
-.logo {
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
+  width: 100%; /* Full width for proper layout */
 }
 
 .nav-menu {
   display: flex;
-  justify-content: center;
   align-items: center;
+  margin-left: auto; /* Push menu items to the far right */
 }
 
 .nav-links {
   display: flex;
   list-style: none;
+  padding: 0;
+  margin: 0;
   gap: 12rem;
+  justify-content: space-between;
+}
+
+.nav-links li {
+  margin: 0 1rem;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
+  margin-bottom: 30px;
 }
 /* Hamburger menu */
 .hamburger {

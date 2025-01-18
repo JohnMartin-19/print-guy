@@ -21,7 +21,9 @@ const Footer = () => {
               <p>
                 Gaberone Plaza,
                 <br />
-                Gaberone Road, 6th Floor, Suite C5
+                Gaberone Road, 
+                <br />
+                6th Floor,Suite C5
                 <br />
                 Nairobi, Kenya.
               </p>

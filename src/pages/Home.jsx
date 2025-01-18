@@ -211,7 +211,7 @@ const Home = () => {
     {/* WhatsApp icon */}
     {/* WhatsApp icon */}
     <a
-      href="https://wa.me/254768171426"
+      href="https://wa.me/254722981403"
       className="whatsapp_float"
       target="_blank"
       rel="noopener noreferrer"
