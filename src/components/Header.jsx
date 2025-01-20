@@ -14,7 +14,7 @@ const Header = () => {
     <header className="navbar">
       <div className="container">
         <div className="navbar-header">
-          {/* Replace the h1 logo with an image link */}
+          {/* Logo stays outside of nav-menu */}
          
           <button className="hamburger" onClick={toggleMenu}>
             <span className="bar"></span>
@@ -23,11 +23,11 @@ const Header = () => {
           </button>
         </div>
         <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
-        <Link to="/" onClick={() => setIsMenuOpen(false)} className="logo" style={{float:'left'}}>
+        <Link to="/" className="logo">
             <img src={logo} alt="Print Guy Logo" className="logo-image" />
           </Link>
           <ul className="nav-links">
-            <li style={{marginLeft:"740px"}}><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
             <li><Link to="/services" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
             <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
@@ -35,6 +35,7 @@ const Header = () => {
         </nav>
       </div>
     </header>
+
   );
 };
 
