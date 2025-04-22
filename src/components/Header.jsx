@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/printguy_logo.jpeg"
+import logo from "../assets/printguy_logo.jpeg";
 import "./Header.css";
 
 const Header = () => {
@@ -14,8 +14,9 @@ const Header = () => {
     <header className="navbar">
       <div className="container">
         <div className="navbar-header">
-          {/* Logo stays outside of nav-menu */}
-         
+          <Link to="/" className="logo">
+            <img src={logo} alt="Print Guy Logo" className="logo-image" />
+          </Link>
           <button className="hamburger" onClick={toggleMenu}>
             <span className="bar"></span>
             <span className="bar"></span>
@@ -23,9 +24,6 @@ const Header = () => {
           </button>
         </div>
         <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
-        <Link to="/" className="logo">
-            <img src={logo} alt="Print Guy Logo" className="logo-image" />
-          </Link>
           <ul className="nav-links">
             <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
             <li><Link to="/services" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
@@ -35,7 +33,6 @@ const Header = () => {
         </nav>
       </div>
     </header>
-
   );
 };
 
