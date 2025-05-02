@@ -1,152 +1,128 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "./Home.css";
-import Products from "../components/Products";
-import { Link } from "react-router-dom";
-import { FaWhatsapp } from "react-icons/fa";
+import React from 'react';
+import Header from './Header';
 
-const Home = (props) => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
-  const fadeInVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeInOut" },
-    },
-  };
-
+const Home = () => {
   return (
-    <motion.section
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-      className="landing-page"
-    >
+    <div className="font-sans text-gray-800">
+      <Header />
+
       {/* Hero Section */}
-      <motion.section
-        className="hero"
-        variants={containerVariants}
-        style={{ backgroundImage: `url(${props.heroBackground})` }}
-      >
-        <div className="hero-content">
-          <motion.h1 variants={itemVariants}>
-            Welcome to Print Guy
-            <br />
-            Your One-Stop Advertising Solution!
-          </motion.h1>
-          <motion.div variants={itemVariants}>
-            <Link to="/services" className="cta-button">
-              Discover More
-            </Link>
-          </motion.div>
+      <section className="pt-24 pb-12 bg-white">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <h1 className="text-4xl md:text-5xl font-bold text-white bg-blue-900 p-6 rounded-lg">
+              Welcome to PrintGuy <br />
+              YOUR ONE-STOP <br />
+              ADVERTISING <br />
+              SOLUTION!
+            </h1>
+            <button className="mt-6 px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600">
+              DISCOVER MORE
+            </button>
+          </div>
+          <div className="md:w-1/2">
+            <img src="https://via.placeholder.com/600x400?text=Printing+Machine" alt="Printing Machine" className="w-full rounded-lg" />
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* About Our Company Section */}
-      <motion.section className="split-section about-section" variants={containerVariants}>
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInVariants}
-        >
-          <h2>About Our Company</h2>
-          <p>
-            When we first started 20 years ago, we were intrigued by the number of
-            businesses that didn’t have proper presentation. From the very beginning, we
-            believed in our customers’ potential to connect with their ideal audience. With
-            our passion for creativity and belief in visual communication, we transformed
-            the faces of brands. Marketing is more than just business; it’s community. At
-            Printguy Limited, we believe in lasting relationships. We bring more than just
-            state-of-the-art equipment; we bring an experienced team of professionals
-            committed to making your brand a success.
-          </p>
-          <p className="signature">A. N Other, CEO & Founder</p>
-        </motion.div>
-        <div className="image-container">
-          <img src={props.yearsImage} alt="20 Years" className="years-image" />
-          <img src={props.ceoImage} alt="CEO" className="ceo-image" />
+      <section className="py-12 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center">About Our Company</h2>
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/3 mb-8 md:mb-0 text-center">
+              <span className="text-6xl font-bold text-orange-500">20</span>
+              <p className="text-lg font-semibold text-blue-900">Years of Experience</p>
+            </div>
+            <div className="md:w-2/3">
+              <p className="text-gray-600 mb-4">
+                When we first started 20 years ago, we were intrigued by the number of businesses that didn’t have proper representation.
+              </p>
+              <p className="text-gray-600 mb-4">
+                From the very beginning, we believed in our customers’ potential to connect with their ideal audience. With our passion for creativity and belief in visual communication, we transformed the faces of brands.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Marketing is more than just business; it’s community. At PrintGuy Limited, we bring more state-of-the-art equipment, we bring experienced team of professionals committed to making your brand a success.
+              </p>
+              <p className="text-gray-600 font-semibold">
+                A. N. Other <br />
+                <span className="text-orange-500">CEO & Founder</span>
+              </p>
+            </div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Why Choose Printguy Section */}
-      <motion.section className="split-section why-section" variants={containerVariants}>
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInVariants}
-        >
-          <h2>Why Choose Printguy</h2>
-          <p>
-            At Printguy Limited, our objective is to deliver services that exceed customer
-            expectations. To continuously improve our processes and adopt the latest
-            technologies to stay ahead in the advertising industry. We are committed to
-            leading the market by setting new standards of excellence, while maintaining
-            sustainability through eco-friendly practices. Our goal is to serve an even
-            broader client base while maintaining superior service quality.
-          </p>
-        </motion.div>
-        <div className="image-container">
-          <img src={props.workerImage} alt="Worker" className="worker-image" />
+      {/* Why Choose PrintGuy Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Why Choose PrintGuy</h2>
+            <ul className="text-gray-600 space-y-4">
+              <li>At PrintGuy Limited, our objective is to deliver services that exceed customer expectations.</li>
+              <li>To continually improve our processes and adopt the latest technologies to stay ahead in the advertising industry.</li>
+              <li>We are committed to leading the market by setting new standards of excellence, while maintaining sustainability through eco-friendly practices.</li>
+              <li>Our goal is to serve an even broader client base while maintaining superior service quality.</li>
+            </ul>
+          </div>
+          <div className="md:w-1/2">
+            <img src="https://via.placeholder.com/400x500?text=Worker+Thumbs+Up" alt="Worker Thumbs Up" className="w-full rounded-lg" />
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Check out our latest projects Section */}
-      <motion.section className="split-section projects-section" variants={containerVariants}>
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInVariants}
-        >
-          <h2>Check out our latest projects</h2>
-        </motion.div>
-        <div className="projects-grid">
-          <img src={props.project1} alt="Project 1" className="project-image" />
-          <img src={props.project2} alt="Project 2" className="project-image" />
-          <img src={props.project3} alt="Project 3" className="project-image" />
-          <img src={props.project4} alt="Project 4" className="project-image" />
-          <img src={props.project5} alt="Project 5" className="project-image" />
-          <img src={props.project6} alt="Project 6" className="project-image" />
+      {/* Latest Projects Section */}
+      <section className="py-12 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center">Check out our latest projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="https://via.placeholder.com/300x200?text=Digital+Printing" alt="Digital Printing" className="w-full h-40 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-blue-900">Digital Printing</h3>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="https://via.placeholder.com/300x200?text=Paper+Bags" alt="Paper Bags" className="w-full h-40 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-blue-900">Paper Bags</h3>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="https://via.placeholder.com/300x200?text=Large+Format+Printing" alt="Large Format Printing" className="w-full h-40 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-orange-500">Large Format Printing</h3>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="https://via.placeholder.com/300x200?text=3D+Signage" alt="3D Signage" className="w-full h-40 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-blue-900">3D Signage</h3>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="https://via.placeholder.com/300x200?text=Branding" alt="Branding" className="w-full h-40 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-blue-900">Branding</h3>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="https://via.placeholder.com/300x200?text=Clothing+Apparel" alt="Clothing & Apparel" className="w-full h-40 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-blue-900">Clothing & Apparel</h3>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </motion.section>
-
-      {/* Products Section */}
-      <Products />
-
-      {/* WhatsApp Icon */}
-      <a
-        href="https://wa.me/254722981403"
-        className="whatsapp_float"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp className="whatsapp-icon" />
-      </a>
-    </motion.section>
+      </section>
+    </div>
   );
 };
 

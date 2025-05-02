@@ -1,11 +1,11 @@
 /* General Styling */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-body {
+/* body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #f6e0cb; 
-}
+  background-color: white; 
+} */
 
 
 body {
@@ -15,7 +15,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6e0cb; /* Light peach */
+  background-color: white /* Light peach */
 }
 
 code {

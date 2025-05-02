@@ -8,13 +8,13 @@ body {
 
 .landing-page {
   width: 90%;
-  max-width: 1200px;
+
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 h1, h2 {
-  color: #002060;
+  color: #fbfcff;
 }
 
 p {
@@ -42,15 +42,31 @@ p {
 .hero-content {
   width: 90%;
   max-width: 1200px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 3rem 1rem;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.text-content {
+  flex: 0 0 60%;
+  text-align: center;
+}
+
+.welcome-text {
+  color: #f7941d;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.subtitle-text {
+  color: white;
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 1.2;
+}
+.about-header{
+  text-align: center;
+  color: #002060;
 }
 
 .cta-button {
@@ -63,11 +79,23 @@ p {
   font-weight: 500;
   transition: background-color 0.3s ease, color 0.3s ease;
   display: inline-block;
+  margin-top: 1rem;
 }
 
 .cta-button:hover {
   background-color: #e07b0e;
   color: white;
+}
+
+.image-container {
+  flex: 0 0 40%;
+  height: 400px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Split Section Styling */
@@ -79,39 +107,88 @@ p {
   gap: 2rem;
 }
 
+/* About Section */
 .about-section {
-  background-color: #002060;
-  color: white;
-  padding: 2rem;
-}
-
-.why-section {
   background-color: white;
   padding: 2rem;
 }
 
-.projects-section {
-  background-color: white;
-  padding: 2rem;
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #002060;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.split-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.years-container {
+  flex: 0 0 20%;
+  text-align: center;
+}
+
+.years-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #f7941d;
+  margin: 0;
+}
+
+.years-label {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #002060;
+  margin: 0;
 }
 
 .text-content {
-  flex: 1;
-  padding: 1rem;
-  min-width: 300px;
+  flex: 0 0 60%;
+  padding: 1rem 0;
   text-align: left;
-}
-
-.text-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .text-content p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  color: #333;
 }
+
+.signature-container {
+  display: flex;
+  align-items: center;
+}
+
+.signature-bullet {
+  font-size: 1.2rem;
+  color: #000;
+  margin-right: 0.5rem;
+}
+
+.signature-text {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #f7941d;
+  font-weight: 500;
+}
+
+.image-container {
+  flex: 0 0 20%;
+  height: 300px;
+}
+
+.ceo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 /* Signature Styling */
 .signature {
@@ -120,26 +197,6 @@ p {
   color: #f7941d;
   margin-top: 1.5rem;
   font-weight: 500;
-}
-
-/* Image Containers */
-.image-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-width: 300px;
-}
-
-.years-image {
-  width: 200px;
-  height: auto;
-}
-
-.ceo-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
 }
 
 .worker-image {
@@ -199,8 +256,12 @@ p {
     padding: 2rem 1rem;
   }
 
-  .hero h1 {
+  .welcome-text {
     font-size: 2.5rem;
+  }
+
+  .subtitle-text {
+    font-size: 1.5rem;
   }
 
   .split-section {
@@ -234,6 +295,21 @@ p {
 }
 
 @media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-content {
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
+
+  .image-container {
+    flex: 0 0 100%;
+    height: 300px;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
@@ -280,8 +356,12 @@ p {
     padding: 1.5rem 0.5rem;
   }
 
-  .hero h1 {
+  .welcome-text {
     font-size: 1.5rem;
+  }
+
+  .subtitle-text {
+    font-size: 1.2rem;
   }
 
   .text-content h2 {
@@ -294,6 +374,10 @@ p {
 
   .years-image {
     width: 120px;
+  }
+
+  .image-container {
+    height: 200px;
   }
 
   .whatsapp_float {
