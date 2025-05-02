@@ -1,13 +1,16 @@
 /* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .landing-page {
-  width: 70%;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 h1, h2 {
@@ -25,238 +28,138 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 65vh; /* 65% of the viewport height */
-  width: 100%; /* Full width */
-  text-align: center;
-  padding: 4rem 0;
-  background: linear-gradient(to bottom, #f7941d, rgba(247, 145, 25, 0.5));
+  width: 100%;
+  min-height: 60vh;
+  background-color: #002060;
+  background-size: cover;
+  background-position: center;
   color: white;
   position: relative;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.hero-content {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
 .hero h1 {
-  font-size: 7rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .cta-button {
-  background-color: white;
-  color: #002060;
+  background-color: #f7941d;
+  color: white;
   text-decoration: none;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   border-radius: 5px;
   font-size: 1.2rem;
-  transition: 0.3s ease;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
 }
 
 .cta-button:hover {
-  background-color: #002060;
+  background-color: #e07b0e;
   color: white;
 }
 
 /* Split Section Styling */
 .split-section {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin: 4rem 0;
+  margin: 3rem 0;
   gap: 2rem;
+}
+
+.about-section {
+  background-color: #002060;
+  color: white;
+  padding: 2rem;
+}
+
+.why-section {
+  background-color: white;
+  padding: 2rem;
+}
+
+.projects-section {
+  background-color: white;
+  padding: 2rem;
 }
 
 .text-content {
   flex: 1;
   padding: 1rem;
+  min-width: 300px;
+  text-align: left;
 }
 
 .text-content h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.text-content p {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.text-content p, .text-content ul {
-  font-size: 1.5rem;
+/* Signature Styling */
+.signature {
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #f7941d;
+  margin-top: 1.5rem;
+  font-weight: 500;
 }
 
-.text-content ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-.image-content {
+/* Image Containers */
+.image-container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 300px;
 }
 
-.image-content img {
+.years-image {
+  width: 200px;
+  height: auto;
+}
+
+.ceo-image {
   width: 100%;
-  border-radius: 8px;
+  height: auto;
   object-fit: cover;
 }
 
-/* Content Wrapper */
-.content-wrapper {
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
+.worker-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-.card-content, .text-content {
-  width: 50%;
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
 }
 
-/* Story Container */
-.story-container {
-  text-align: justify;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.story-container p {
-  font-size: 2rem;
-}
-
-/* Row Container */
-/* Row container styling */
-.row {
-  display: flex;
-  justify-content: space-between; /* Distribute columns evenly */
-  align-items: stretch; /* Ensure all columns align vertically */
-  gap: 1rem; /* Add spacing between columns */
-  margin: 2rem auto; /* Center the row and add vertical spacing */
-  width: 100%; /* Full width of the container */
-  overflow-x: auto; /* Allow horizontal scrolling if needed */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */ 
-  box-sizing: border-box;
-}
-
-/* Column styling */
-.column {
-  flex: 1 0 33.333%; /* Columns take up one-third of the container */
-  max-width: calc(33.333% - 1rem);
-  min-width: 480px; /* Adjust for gaps */
-  padding: 1rem; /* Inner padding for columns */
-  text-align: center; /* Center-align content */
-  box-sizing: border-box;
-}
-
-/* Style adjustments for content */
-.column h2 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.column p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Add separators between columns */
-.column:not(:last-child)::after {
-  content: ''; /* Empty content for separator */
-  width: 2px; /* Separator width */
-  height: 100%; /* Full height of the column */
-  background: #ccc; /* Separator color */
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-/* Media query for tablets (768px and below) */
-@media (max-width: 768px) {
-  .column {
-    flex: 1 0 50%; /* Two columns per row */
-    max-width: calc(50% - 1rem);
-  }
-}
-
-/* Media query for mobile devices (480px and below) */
-@media (max-width: 480px) {
-  .column {
-    flex: 1 0 100%; /* Full width for each column */
-    width: 100%;
-  }
-}
-/* Media Queries */
-
-/* Large screens */
-@media (max-width: 1200px) {
-  .hero h1 {
-    font-size: 5rem;
-  }
-
-  .hero p {
-    font-size: 2rem;
-  }
-
-  .text-content h2 {
-    font-size: 2.5rem;
-  }
-}
-
-/* Medium screens */
-@media (max-width: 992px) {
-  .split-section {
-    flex-direction: column;
-  }
-
-  .content-wrapper {
-    flex-direction: column;
-  }
-
-  .card-content, .text-content {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .hero h1 {
-    font-size: 4rem;
-  }
-
-  .hero p {
-    font-size: 1.8rem;
-  }
-  .row {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    justify-content: center;
-    gap: 2rem;
-    height: 100%;
-    width: 100%;
-    margin: 2rem auto;
-  }
-}
-
-/* Small screens */
-@media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    font-size: 1.5rem;
-  }
-}
-
-/* Extra-small screens */
-@media (max-width: 480px) {
-
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-  }
-
-  .cta-button {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-  }
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* Floating WhatsApp Icon */
@@ -266,27 +169,133 @@ p {
   right: 20px;
   background-color: #25d366;
   color: white;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp_float:hover {
   transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .whatsapp-icon {
-  font-size: 24px;
+  font-size: 30px;
 }
 
-/* Responsive Design for Mobile */
-@media screen and (max-width: 767px) {
+/* Media Queries */
+@media (max-width: 992px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .split-section {
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .text-content h2 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 1.1rem;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .years-image {
+    width: 150px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .whatsapp_float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-icon {
+    font-size: 24px;
+  }
+
+  .signature {
+    font-size: 1.1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .hero {
+    min-height: 40vh;
+  }
+
+  .hero-content {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+
+  .years-image {
+    width: 120px;
+  }
+
   .whatsapp_float {
     width: 40px;
     height: 40px;
@@ -296,5 +305,13 @@ p {
 
   .whatsapp-icon {
     font-size: 20px;
+  }
+
+  .signature {
+    font-size: 1rem;
+  }
+
+  .project-image {
+    height: 100px;
   }
 }
