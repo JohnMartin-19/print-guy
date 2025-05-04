@@ -152,6 +152,8 @@ const Home = (props) => {
             </p>
           </motion.div>
 
+          
+
           {/* Right Column - 30% (Image) */}
           <div className="image-container">
             <img src={props.workerImage} alt="Worker" className="worker-image" />
@@ -160,29 +162,60 @@ const Home = (props) => {
       </motion.section>
      </div>
 
-      {/* Check out our latest projects Section */}
-      <motion.section className="split-section projects-section" variants={containerVariants}>
-        <motion.div
-          className="text-content"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInVariants}
-        >
-          <h2>Check out our latest projects</h2>
-        </motion.div>
-        <div className="projects-grid">
-          <img src={props.project1} alt="Project 1" className="project-image" />
-          <img src={props.project2} alt="Project 2" className="project-image" />
-          <img src={props.project3} alt="Project 3" className="project-image" />
-          <img src={props.project4} alt="Project 4" className="project-image" />
-          <img src={props.project5} alt="Project 5" className="project-image" />
-          <img src={props.project6} alt="Project 6" className="project-image" />
+     <div>
+
+      {/* Services We Provide Section */}
+      <motion.section
+        className="services-section"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+     
+        <h2 className="services-title">Services We Provide</h2>
+        <div className="services-grid">
+          <div className="service-card">
+            <img
+              src="https://via.placeholder.com/100?text=Digital+Printing"
+              alt="Digital Printing"
+            />
+            <h3>Digital Printing</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className="service-card">
+            <img
+              src="https://via.placeholder.com/100?text=Large+Format"
+              alt="Large Format Printing"
+            />
+            <h3>Large Format Printing</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className="service-card">
+            <img
+              src="https://via.placeholder.com/100?text=3D+Signage"
+              alt="3D Signage"
+            />
+            <h3>3D Signage</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className="service-card">
+            <img
+              src="https://via.placeholder.com/100?text=Clothing+Apparel"
+              alt="Clothing & Apparel"
+            />
+            <h3>Clothing & Apparel</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div className="service-image">
+            <img
+              src="https://via.placeholder.com/400x300?text=Printing+Machine"
+              alt="Printing Machine"
+            />
+          </div>
         </div>
       </motion.section>
-
-      {/* Products Section */}
-      <Products />
+     </div>
 
       {/* WhatsApp Icon */}
       <a
