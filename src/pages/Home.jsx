@@ -9,9 +9,35 @@ import { BsFillBadge3dFill } from "react-icons/bs";
 import homeImage from '../assets/image.jpg';
 import fao from '../assets/fao.jpg'
 import img1 from '../assets/printer.jpeg'
+import { useState,useEffect } from "react";
+
+// Load Bootstrap JS
+const loadBootstrap = () => {
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";
+  script.async = true;
+  document.body.appendChild(script);
+};
 
 
 const Home = (props) => {
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Track mouse movement
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -40,6 +66,11 @@ const Home = (props) => {
     },
   };
 
+    // Load Bootstrap JS when the component mounts
+    useEffect(() => {
+      loadBootstrap();
+    }, []);
+
   return (
     <motion.section
       initial="hidden"
@@ -47,6 +78,15 @@ const Home = (props) => {
       variants={containerVariants}
       className="landing-page"
     >
+
+       {/* Mouse Tracker Element */}
+       <div
+        className="mouse-tracker"
+        style={{
+          left: mousePosition.x - 15, // Adjust for half the width of the tracker
+          top: mousePosition.y - 15,  // Adjust for half the height of the tracker
+        }}
+      ></div>
       {/* Hero Section */}
       <motion.section
         className="hero"
@@ -345,10 +385,10 @@ const Home = (props) => {
                 <img src={img1} alt="Los Angeles" class="d-block w-100" id="c-image" />
               </div>
               <div class="carousel-item">
-                <img src="chicago.jpg" alt="Chicago" class="d-block w-100" />
+                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
               </div>
               <div class="carousel-item">
-                <img src="ny.jpg" alt="New York" class="d-block w-100" />
+                <img src="ny.jpg" alt="New York" class="d-block w-100" id="c-image"  />
               </div>
             </div>
 
@@ -362,6 +402,31 @@ const Home = (props) => {
           </div>
         </motion.section>
       </div>
+
+      {/* Testimonials Section */}
+      <motion.section
+        className="testimonials-section"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h2 className="testimonials-title" style={{ color: "#f7941d", fontSize: "3rem", textAlign: "center" }}>
+          What our Clients Say about us
+        </h2>
+        <div className="testimonials-container">
+          <div className="testimonial-card">
+            <div className="speech-bubble"></div>
+            <div className="avatar"></div>
+            <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
+          </div>
+          <div className="testimonial-card">
+            <div className="speech-bubble"></div>
+            <div className="avatar"></div>
+            <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
+          </div>
+        </div>
+      </motion.section>
 
       {/* WhatsApp Icon */}
       <a
