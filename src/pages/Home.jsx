@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import { IoPrintSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { GiClothes } from "react-icons/gi";
 import { BsFillBadge3dFill } from "react-icons/bs";
@@ -10,6 +9,10 @@ import homeImage from '../assets/image.jpg';
 import fao from '../assets/fao.jpg'
 import img1 from '../assets/printer.jpeg'
 import { useState,useEffect } from "react";
+import logo from "../assets/printguy_logo.jpeg";
+import { CiClock2 } from "react-icons/ci";
+
+
 
 // Load Bootstrap JS
 const loadBootstrap = () => {
@@ -23,6 +26,7 @@ const loadBootstrap = () => {
 const Home = (props) => {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Track mouse movement
   useEffect(() => {
@@ -32,11 +36,28 @@ const Home = (props) => {
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
+  // Load Bootstrap JS when the component mounts
+  useEffect(() => {
+    loadBootstrap();
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  // Scroll to section function
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close menu after clicking
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -65,12 +86,6 @@ const Home = (props) => {
       transition: { duration: 0.8, ease: "easeInOut" },
     },
   };
-
-    // Load Bootstrap JS when the component mounts
-    useEffect(() => {
-      loadBootstrap();
-    }, []);
-
   return (
     <motion.section
       initial="hidden"
@@ -78,6 +93,50 @@ const Home = (props) => {
       variants={containerVariants}
       className="landing-page"
     >
+
+      {/* Top Bar */}
+      <div className="top-bar">
+        <span>
+          <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          Gaberone Plaza 6th Floor CS2
+        </span>
+        <a href="https://www.printguy.co.ke">
+          <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          www.printguy.co.ke
+        </a>
+        <span>
+          <CiClock2 className="icon" />
+          Mon - Saturday, 8am - 8pm
+        </span>
+      </div>
+
+      {/* Navbar */}
+      <header className="navbar">
+        <div className="container">
+          <div className="navbar-header">
+            <div className="logo" onClick={() => scrollToSection("hero-section")}>
+              <img src={logo} alt="Print Guy Logo" className="logo-image" />
+            </div>
+            <button className="hamburger" onClick={toggleMenu}>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </button>
+          </div>
+          <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
+            <ul className="nav-links">
+              <li><a href="#hero-section" onClick={() => scrollToSection("hero-section")}>Home</a></li>
+              <li><a href="#services-section" onClick={() => scrollToSection("services-section")}>Services</a></li>
+              <li><a href="#about-section" onClick={() => scrollToSection("about-section")}>About Us</a></li>
+              <li><a href="#contact-section" onClick={() => scrollToSection("contact-section")}>Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
        {/* Mouse Tracker Element */}
        <div
@@ -192,7 +251,7 @@ const Home = (props) => {
             }
           `}
         </style>
-        <div className="hero-content">
+        <div className="hero-content"  id="hero-section">
           <div className="text-content">
             <motion.h1 variants={itemVariants}>
               <span className="welcome-text">Welcome to Print Guy</span>
@@ -202,9 +261,9 @@ const Home = (props) => {
               </span>
             </motion.h1>
             <motion.div variants={itemVariants}>
-              <Link to="/services" className="cta-button">
+              <a href="#services-section" onClick={() => scrollToSection("services-section")} className="cta-button"> 
                 Discover More
-              </Link>
+              </a>
             </motion.div>
           </div>
           <div className="image-container">
@@ -217,7 +276,7 @@ const Home = (props) => {
       <h1 className="section-title" style={{ fontSize: "80px", marginTop:'10px' }}>
         About Our Company
       </h1>
-      <motion.section className="about-section" variants={containerVariants}>
+      <motion.section className="about-section" variants={containerVariants}  id="about-section">
         <div className="years-container">
           <p className="years-number">20</p>
           <p className="years-label">Years</p>
@@ -311,6 +370,7 @@ const Home = (props) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          id='services-section'
         >
           <h2 className="services-title" style={{ fontSize: "5rem", color: "#002060" }}>
             Services We Provide
@@ -383,12 +443,59 @@ const Home = (props) => {
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src={img1} alt="Los Angeles" class="d-block w-100" id="c-image" />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
               </div>
               <div class="carousel-item">
                 <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
               </div>
               <div class="carousel-item">
-                <img src="ny.jpg" alt="New York" class="d-block w-100" id="c-image"  />
+                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <div class="carousel-caption">
+                  <h3>Los Angeles</h3>
+                  <p>We had such a great time in LA!</p>
+                </div>
               </div>
             </div>
 
@@ -412,9 +519,26 @@ const Home = (props) => {
         viewport={{ once: true }}
       >
         <h2 className="testimonials-title" style={{ color: "#f7941d", fontSize: "3rem", textAlign: "center" }}>
-          What our Clients Say about us
+          What our Clients
+          <br />
+           Say about us
         </h2>
         <div className="testimonials-container">
+          <div className="testimonial-card">
+            <div className="speech-bubble"></div>
+            <div className="avatar"></div>
+            <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
+          </div>
+          <div className="testimonial-card">
+            <div className="speech-bubble"></div>
+            <div className="avatar"></div>
+            <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
+          </div>
+          <div className="testimonial-card">
+            <div className="speech-bubble"></div>
+            <div className="avatar"></div>
+            <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
+          </div>
           <div className="testimonial-card">
             <div className="speech-bubble"></div>
             <div className="avatar"></div>
