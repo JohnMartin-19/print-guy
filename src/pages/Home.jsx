@@ -17,6 +17,7 @@ import kabati from '../assets/kabati.jpg';
 import law from '../assets/law.jpg';
 import liv from '../assets/livonia.jpg';
 import perfect from '../assets/perfect.jpg';
+import pgman from '../assets/Printguy man.png'
 
 // Load Bootstrap JS
 const loadBootstrap = () => {
@@ -320,7 +321,6 @@ const Home = (props) => {
             <div className="signature-container">
               <span className="signature-bullet">•</span>
               <span className="signature-text">A. N Other, CEO & Founder</span>
-crush
             </div>
             <div className="image-container">
               <img src={props.ceoImage} alt="CEO" className="ceo-image" />
@@ -368,7 +368,7 @@ crush
               </p>
             </motion.div>
             <div className="image-container">
-              <img src={props.workerImage} alt="Worker" className="worker-image" />
+              <img src={pgman} alt="Worker" className="worker-image" />
             </div>
           </div>
         </motion.section>
