@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 import { IoPrintSharp } from "react-icons/io5";
@@ -6,18 +6,17 @@ import { FaWhatsapp } from "react-icons/fa";
 import { GiClothes } from "react-icons/gi";
 import { BsFillBadge3dFill } from "react-icons/bs";
 import homeImage from '../assets/image.jpg';
-import fao from '../assets/fao.jpg'
-import { useState, useEffect } from "react";
+import fao from '../assets/fao.jpg';
 import logo from "../assets/printguy_logo.jpeg";
 import { CiClock2 } from "react-icons/ci";
-import squareapple from '../assets/squarepple.jpg'
-import bike from '../assets/bike.jpg'
-import bull from '../assets/bull.jpg'
-import chai from '../assets/chai.jpg'
-import kabati from '../assets/kabati.jpg'
-import law from '../assets/law.jpg'
-import liv from '../assets/livonia.jpg'
-import perfect from '../assets/perfect.jpg'
+import squareapple from '../assets/squarepple.jpg';
+import bike from '../assets/bike.jpg';
+import bull from '../assets/bull.jpg';
+import chai from '../assets/chai.jpg';
+import kabati from '../assets/kabati.jpg';
+import law from '../assets/law.jpg';
+import liv from '../assets/livonia.jpg';
+import perfect from '../assets/perfect.jpg';
 
 // Load Bootstrap JS
 const loadBootstrap = () => {
@@ -30,6 +29,7 @@ const loadBootstrap = () => {
 const Home = (props) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [flippedCards, setFlippedCards] = useState([false, false, false, false]);
 
   // Track mouse movement
   useEffect(() => {
@@ -60,6 +60,13 @@ const Home = (props) => {
       section.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false); // Close menu after clicking
     }
+  };
+
+  // Toggle flip state for a specific card
+  const toggleFlip = (index) => {
+    setFlippedCards((prev) =>
+      prev.map((flipped, i) => (i === index ? !flipped : flipped))
+    );
   };
 
   const containerVariants = {
@@ -99,7 +106,7 @@ const Home = (props) => {
     >
       {/* Top Bar */}
       <div className="top-bar">
-        <span>
+      <span>
           <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
@@ -146,8 +153,8 @@ const Home = (props) => {
       <div
         className="mouse-tracker"
         style={{
-          left: mousePosition.x - 15, // Adjust for half the width of the tracker
-          top: mousePosition.y - 15,  // Adjust for half the height of the tracker
+          left: mousePosition.x - 15,
+          top: mousePosition.y - 15,
         }}
       ></div>
 
@@ -180,17 +187,17 @@ const Home = (props) => {
               width: 90%;
               max-width: 100%;
               display: flex;
-              flex-direction: row; /* Side-by-side layout */
+              flex-direction: row;
               align-items: center;
               padding: 0rem;
               height: 100%;
             }
 
             .text-content {
-              flex: 0 0 50%; /* Left 50% for text */
+              flex: 0 0 50%;
               max-width:200px
-              text-align: left; /* Align text to the left */
-              padding-right: 1rem; /* Add some spacing between text and image */
+              text-align: left;
+              padding-right: 1rem;
             }
 
             .welcome-text {
@@ -223,7 +230,7 @@ const Home = (props) => {
             }
 
             .image-container {
-              flex: 0 0 100%; /* Right 50% for image */
+              flex: 0 0 100%;
               height: 100%;
             }
 
@@ -231,18 +238,17 @@ const Home = (props) => {
               max-height: 60vh;
               height:700px;
               width:700px;
-              object-fit: cover; /* Ensure image covers the container */
-              min-height: 50vh; /* Match the hero section's min-height */
-              
+              object-fit: cover;
+              min-height: 50vh;
             }
 
             @media (max-width: 768px) {
               .hero-content {
-                flex-direction: column; /* Stack on mobile */
+                flex-direction: column;
               }
               .text-content {
                 flex: 1;
-                text-align: center; /* Center text on mobile */
+                text-align: center;
                 padding-right: 0;
                 margin-bottom: 1rem;
               }
@@ -251,7 +257,7 @@ const Home = (props) => {
                 width: 100%;
               }
               .subtitle-text {
-                font-size: 4rem; /* Adjust font size for mobile */
+                font-size: 4rem;
               }
             }
           `}
@@ -266,7 +272,7 @@ const Home = (props) => {
               </span>
             </motion.h1>
             <motion.div variants={itemVariants}>
-              <a href="#services-section" onClick={() => scrollToSection("services-section")} className="cta-button"> 
+              <a href="#services-section" onClick={() => scrollToSection("services-section")} className="cta-button">
                 Discover More
               </a>
             </motion.div>
@@ -278,7 +284,7 @@ const Home = (props) => {
       </motion.section>
 
       {/* About Our Company Section */}
-      <h1 className="section-title" style={{ fontSize: "80px", marginTop:'10px' }}>
+      <h1 className="section-title" style={{ marginTop:'10px' }}>
         About Our Company
       </h1>
       <motion.section className="about-section" variants={containerVariants} id="about-section">
@@ -314,6 +320,7 @@ const Home = (props) => {
             <div className="signature-container">
               <span className="signature-bullet">•</span>
               <span className="signature-text">A. N Other, CEO & Founder</span>
+crush
             </div>
             <div className="image-container">
               <img src={props.ceoImage} alt="CEO" className="ceo-image" />
@@ -377,42 +384,75 @@ const Home = (props) => {
           viewport={{ once: true }}
           id='services-section'
         >
-          <h2 className="services-title" style={{ fontSize: "5rem", color: "#002060" }}>
+          <h2 className="services-title" style={{ color: "#002060" }}>
             Services We Provide
           </h2>
           <div className="services-grid">
             <div className="cards-container">
               <div className="cards-row">
                 <div
-                  className="service-card"
+                  className={`service-card ${flippedCards[0] ? 'flipped' : ''}`}
                   id="digiprint"
                   style={{ color: "black", backgroundColor: "hwb(48 0% 0%)" }}
+                  onClick={() => toggleFlip(0)}
                 >
-                  <IoPrintSharp className="card-icon" />
-                  <h4>Digital Printing</h4>
-                  <p>Lorem ipsum dolor sit amet.</p>
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <IoPrintSharp className="card-icon" />
+                      <h4>Digital Printing</h4>
+                    </div>
+                    <div className="card-back">
+                      <p>Fast, high-quality, and customizable printing for all your needs.</p>
+                    </div>
+                  </div>
                 </div>
                 <div
-                  className="service-card"
+                  className={`service-card ${flippedCards[1] ? 'flipped' : ''}`}
                   style={{ color: "white", backgroundColor: "#002060" }}
+                  onClick={() => toggleFlip(1)}
                 >
-                  <BsFillBadge3dFill className="card-icon" />
-                  <h4 style={{ color: "white" }}>3D Signage</h4>
-                  <p style={{ color: "white" }}>Lorem ipsum dolor sit amet.</p>
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <BsFillBadge3dFill className="card-icon" />
+                      <h4 style={{ color: "white" }}>3D Signage</h4>
+                    </div>
+                    <div className="card-back">
+                      <p style={{ color: "white" }}>Our talented graphic designers transform your concepts into visually stunning
+                      designs.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="cards-row">
-                <div className="service-card" style={{ color: "white", backgroundColor: "#e07b0e" }}>
-                  <h4>Large Format Printing</h4>
-                  <p>Lorem ipsum dolor sit amet.</p>
+                <div
+                  className={`service-card ${flippedCards[2] ? 'flipped' : ''}`}
+                  style={{ color: "white", backgroundColor: "#e07b0e" }}
+                  onClick={() => toggleFlip(2)}
+                >
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <h4>Large Format Printing</h4>
+                    </div>
+                    <div className="card-back">
+                      <p>Eye-catching banners, posters, and more to amplify your
+                      brand’s presence.</p>
+                    </div>
+                  </div>
                 </div>
                 <div
-                  className="service-card"
+                  className={`service-card ${flippedCards[3] ? 'flipped' : ''}`}
                   style={{ color: "white", backgroundColor: "skyblue" }}
+                  onClick={() => toggleFlip(3)}
                 >
-                  <GiClothes className="card-icon" />
-                  <h4 style={{ color: "white" }}>Clothing & Apparel</h4>
-                  <p style={{ color: "white" }}>Lorem ipsum dolor sit amet.</p>
+                  <div className="card-inner">
+                    <div className="card-front">
+                      <GiClothes className="card-icon" />
+                      <h4 style={{ color: "white" }}>Clothing & Apparel</h4>
+                    </div>
+                    <div className="card-back">
+                      <p style={{ color: "white" }}>From merchandise to interior décor, we’ve got you covered.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -435,8 +475,8 @@ const Home = (props) => {
           viewport={{ once: true }}
         >
           <h2 className="projects-title">Our Latest Projects</h2>
-          <div id="demo" class="carousel slide" data-bs-ride="carousel" >
-            <div class="carousel-indicators">
+          <div id="demo" className="carousel slide" data-bs-ride="carousel">
+            <div className="carousel-indicators">
               <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
@@ -447,62 +487,62 @@ const Home = (props) => {
               <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
             </div>
 
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src={squareapple} alt="Los Angeles" class="d-block w-100" id="c-image" />
-                <div class="carousel-caption">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img src={squareapple} alt="Los Angeles" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
                   <h3>SQUARE APPLE</h3>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src={perfect} alt="Chicago" class="d-block w-100" id="c-image"  />
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <img src={perfect} alt="Chicago" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
                   <h3>Perfect Care Collection</h3>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src={chai} alt="Chicago" class="d-block w-100" id="c-image"  />
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <img src={chai} alt="Chicago" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
                   <h3>Baraka Chai</h3>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src={liv} alt="Chicago" class="d-block w-100" id="c-image"  />
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <img src={liv} alt="Chicago" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
                   <h3>Livonia Wines</h3>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src={bike} alt="Chicago" class="d-block w-100" id="c-image"  />
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <img src={bike} alt="Chicago" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
                   <h3>'Minnesotta' Bike Printing</h3>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src={bull} alt="Chicago" class="d-block w-100" id="c-image"  />
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <img src={bull} alt="Chicago" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
                   <h3>The Bull</h3>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src={law} alt="Chicago" class="d-block w-100" id="c-image"  />
-                <div class="carousel-caption">
-                  <h3>Law Firm </h3>
+              <div className="carousel-item">
+                <img src={law} alt="Chicago" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
+                  <h3>Law Firm</h3>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src={kabati} alt="Chicago" class="d-block w-100" id="c-image"  />
-                <div class="carousel-caption">
+              <div className="carousel-item">
+                <img src={kabati} alt="Chicago" className="d-block w-100" id="c-image" />
+                <div className="carousel-caption">
                   <h3>Kabati</h3>
                 </div>
               </div>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
+            <button className="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span className="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
+            <button className="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span className="carousel-control-next-icon"></span>
             </button>
           </div>
         </motion.section>
@@ -518,7 +558,7 @@ const Home = (props) => {
       >
         <h2 className="testimonials-title" style={{ color: "#f7941d"}}>
           What our Clients <br />
-           Say about us
+          Say about us
         </h2>
         <div className="testimonials-container">
           <div className="testimonial-card">
