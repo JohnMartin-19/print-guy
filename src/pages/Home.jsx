@@ -7,7 +7,7 @@ import { GiClothes } from "react-icons/gi";
 import { BsFillBadge3dFill } from "react-icons/bs";
 import homeImage from '../assets/image.jpg';
 import fao from '../assets/fao.jpg'
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import logo from "../assets/printguy_logo.jpeg";
 import { CiClock2 } from "react-icons/ci";
 import squareapple from '../assets/squarepple.jpg'
@@ -19,10 +19,6 @@ import law from '../assets/law.jpg'
 import liv from '../assets/livonia.jpg'
 import perfect from '../assets/perfect.jpg'
 
-
-
-
-
 // Load Bootstrap JS
 const loadBootstrap = () => {
   const script = document.createElement("script");
@@ -31,9 +27,7 @@ const loadBootstrap = () => {
   document.body.appendChild(script);
 };
 
-
 const Home = (props) => {
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -95,6 +89,7 @@ const Home = (props) => {
       transition: { duration: 0.8, ease: "easeInOut" },
     },
   };
+
   return (
     <motion.section
       initial="hidden"
@@ -102,7 +97,6 @@ const Home = (props) => {
       variants={containerVariants}
       className="landing-page"
     >
-
       {/* Top Bar */}
       <div className="top-bar">
         <span>
@@ -137,6 +131,7 @@ const Home = (props) => {
             </button>
           </div>
           <nav className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
+            <button className="close-btn" onClick={toggleMenu}>✕</button>
             <ul className="nav-links">
               <li><a href="#hero-section" onClick={() => scrollToSection("hero-section")}>Home</a></li>
               <li><a href="#services-section" onClick={() => scrollToSection("services-section")}>Services</a></li>
@@ -147,14 +142,15 @@ const Home = (props) => {
         </div>
       </header>
 
-       {/* Mouse Tracker Element */}
-       <div
+      {/* Mouse Tracker Element */}
+      <div
         className="mouse-tracker"
         style={{
           left: mousePosition.x - 15, // Adjust for half the width of the tracker
           top: mousePosition.y - 15,  // Adjust for half the height of the tracker
         }}
       ></div>
+
       {/* Hero Section */}
       <motion.section
         className="hero"
@@ -260,7 +256,7 @@ const Home = (props) => {
             }
           `}
         </style>
-        <div className="hero-content"  id="hero-section">
+        <div className="hero-content" id="hero-section">
           <div className="text-content">
             <motion.h1 variants={itemVariants}>
               <span className="welcome-text">Welcome to Print Guy</span>
@@ -285,7 +281,7 @@ const Home = (props) => {
       <h1 className="section-title" style={{ fontSize: "80px", marginTop:'10px' }}>
         About Our Company
       </h1>
-      <motion.section className="about-section" variants={containerVariants}  id="about-section">
+      <motion.section className="about-section" variants={containerVariants} id="about-section">
         <div className="years-container">
           <p className="years-number">20</p>
           <p className="years-label">Years</p>
@@ -440,10 +436,8 @@ const Home = (props) => {
         >
           <h2 className="projects-title">Our Latest Projects</h2>
           <div id="demo" class="carousel slide" data-bs-ride="carousel" >
-
-          
             <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
@@ -453,7 +447,6 @@ const Home = (props) => {
               <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
             </div>
 
-          
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src={squareapple} alt="Los Angeles" class="d-block w-100" id="c-image" />
@@ -465,54 +458,46 @@ const Home = (props) => {
                 <img src={perfect} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
                   <h3>Perfect Care Collection</h3>
-                  
                 </div>
               </div>
               <div class="carousel-item">
                 <img src={chai} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
                   <h3>Baraka Chai</h3>
-                  
                 </div>
               </div>
               <div class="carousel-item">
                 <img src={liv} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
                   <h3>Livonia Wines</h3>
-                
                 </div>
               </div>
               <div class="carousel-item">
                 <img src={bike} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
                   <h3>'Minnesotta' Bike Printing</h3>
-                 
                 </div>
               </div>
               <div class="carousel-item">
                 <img src={bull} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
                   <h3>The Bull</h3>
-                 
                 </div>
               </div>
               <div class="carousel-item">
                 <img src={law} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
                   <h3>Law Firm </h3>
-                  
                 </div>
               </div>
               <div class="carousel-item">
                 <img src={kabati} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
                   <h3>Kabati</h3>
-                 
                 </div>
               </div>
             </div>
 
-          
             <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </button>
