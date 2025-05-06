@@ -393,7 +393,7 @@ const Home = (props) => {
                 <div
                   className={`service-card ${flippedCards[0] ? 'flipped' : ''}`}
                   id="digiprint"
-                  style={{ color: "black", backgroundColor: "hwb(48 0% 0%)" }}
+                  style={{ color: "black", backgroundColor: "hwb(48 0% 0%)", height:'300px',width:'300px' }}
                   onClick={() => toggleFlip(0)}
                 >
                   <div className="card-inner">
@@ -408,7 +408,7 @@ const Home = (props) => {
                 </div>
                 <div
                   className={`service-card ${flippedCards[1] ? 'flipped' : ''}`}
-                  style={{ color: "white", backgroundColor: "#002060" }}
+                  style={{ color: "white", backgroundColor: "#002060" ,height:'300px',width:'300px'}}
                   onClick={() => toggleFlip(1)}
                 >
                   <div className="card-inner">
@@ -417,7 +417,7 @@ const Home = (props) => {
                       <h4 style={{ color: "white" }}>3D Signage</h4>
                     </div>
                     <div className="card-back">
-                      <p style={{ color: "white" }}>Our talented graphic designers transform your concepts into visually stunning
+                      <p style={{ color: "white",height:'300px',width:'300px' }}>Our talented graphic designers transform your concepts into visually stunning
                       designs.</p>
                     </div>
                   </div>
@@ -426,7 +426,7 @@ const Home = (props) => {
               <div className="cards-row">
                 <div
                   className={`service-card ${flippedCards[2] ? 'flipped' : ''}`}
-                  style={{ color: "white", backgroundColor: "#e07b0e" }}
+                  style={{ color: "white", backgroundColor: "#e07b0e",height:'300px',width:'300px' }}
                   onClick={() => toggleFlip(2)}
                 >
                   <div className="card-inner">
@@ -441,7 +441,7 @@ const Home = (props) => {
                 </div>
                 <div
                   className={`service-card ${flippedCards[3] ? 'flipped' : ''}`}
-                  style={{ color: "white", backgroundColor: "skyblue" }}
+                  style={{ color: "white", backgroundColor: "skyblue",height:'300px',width:'300px' }}
                   onClick={() => toggleFlip(3)}
                 >
                   <div className="card-inner">
