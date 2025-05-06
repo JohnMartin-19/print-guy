@@ -7,10 +7,19 @@ import { GiClothes } from "react-icons/gi";
 import { BsFillBadge3dFill } from "react-icons/bs";
 import homeImage from '../assets/image.jpg';
 import fao from '../assets/fao.jpg'
-import img1 from '../assets/printer.jpeg'
 import { useState,useEffect } from "react";
 import logo from "../assets/printguy_logo.jpeg";
 import { CiClock2 } from "react-icons/ci";
+import squareapple from '../assets/squarepple.jpg'
+import bike from '../assets/bike.jpg'
+import bull from '../assets/bull.jpg'
+import chai from '../assets/chai.jpg'
+import kabati from '../assets/kabati.jpg'
+import law from '../assets/law.jpg'
+import liv from '../assets/livonia.jpg'
+import perfect from '../assets/perfect.jpg'
+
+
 
 
 
@@ -381,7 +390,7 @@ const Home = (props) => {
                 <div
                   className="service-card"
                   id="digiprint"
-                  style={{ color: "black", backgroundColor: "yellow" }}
+                  style={{ color: "black", backgroundColor: "hwb(48 0% 0%)" }}
                 >
                   <IoPrintSharp className="card-icon" />
                   <h4>Digital Printing</h4>
@@ -397,7 +406,7 @@ const Home = (props) => {
                 </div>
               </div>
               <div className="cards-row">
-                <div className="service-card">
+                <div className="service-card" style={{ color: "white", backgroundColor: "#e07b0e" }}>
                   <h4>Large Format Printing</h4>
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
@@ -434,67 +443,71 @@ const Home = (props) => {
 
           
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
               <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
             </div>
 
           
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src={img1} alt="Los Angeles" class="d-block w-100" id="c-image" />
+                <img src={squareapple} alt="Los Angeles" class="d-block w-100" id="c-image" />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>SQUARE APPLE</h3>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <img src={perfect} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>Perfect Care Collection</h3>
+                  
                 </div>
               </div>
               <div class="carousel-item">
-                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <img src={chai} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>Baraka Chai</h3>
+                  
                 </div>
               </div>
               <div class="carousel-item">
-                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <img src={liv} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>Livonia Wines</h3>
+                
                 </div>
               </div>
               <div class="carousel-item">
-                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <img src={bike} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>'Minnesotta' Bike Printing</h3>
+                 
                 </div>
               </div>
               <div class="carousel-item">
-                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <img src={bull} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>The Bull</h3>
+                 
                 </div>
               </div>
               <div class="carousel-item">
-                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <img src={law} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>Law Firm </h3>
+                  
                 </div>
               </div>
               <div class="carousel-item">
-                <img src={img1} alt="Chicago" class="d-block w-100" id="c-image"  />
+                <img src={kabati} alt="Chicago" class="d-block w-100" id="c-image"  />
                 <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+                  <h3>Kabati</h3>
+                 
                 </div>
               </div>
             </div>
@@ -518,9 +531,8 @@ const Home = (props) => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="testimonials-title" style={{ color: "#f7941d", fontSize: "3rem", textAlign: "center" }}>
-          What our Clients
-          <br />
+        <h2 className="testimonials-title" style={{ color: "#f7941d"}}>
+          What our Clients <br />
            Say about us
         </h2>
         <div className="testimonials-container">

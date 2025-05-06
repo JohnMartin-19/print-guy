@@ -479,7 +479,7 @@ p {
   object-fit: cover;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for services */
 @media (max-width: 1024px) {
   .services-grid {
     flex-direction: column;
@@ -494,7 +494,8 @@ p {
   }
   .service-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 100vw;
+    align-items: center;
   }
 }
 
@@ -502,21 +503,48 @@ p {
   .services-title {
     font-size: 3rem;
   }
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards-container {
+    margin-left: 0;
+    align-items: center;
+  }
+  .cards-row {
+    flex-direction: column;
+    gap: 20px;
+  }
   .service-card {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
+    height: 300px;
   }
 }
 
-
-.magicpattern { 
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: repeat;
-  background-image: url("data:image/svg+xml;utf8,%3Csvg width=%222000%22 height=%221400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath fill=%22%23fff%22 d=%22M0 0h2000v1400H0z%22%2F%3E%3Cpath d=%22M0 73h0c71.678 10.57 143.356 21.14 205 17 61.644-4.14 113.253-22.988 166-32s106.631-8.187 165 1 121.223 26.737 190 25c68.777-1.737 143.479-22.76 208-31 64.521-8.24 118.862-3.696 173-1 54.138 2.696 108.073 3.545 163 12 54.927 8.455 110.845 24.517 170 22 59.155-2.517 121.547-23.613 183-30 61.453-6.387 121.968 1.934 191 8s146.58 9.876 179 11c32.42 1.124 19.71-.438 47-2M0 147h0c50.302 1.673 100.603 3.346 160 6 59.397 2.654 127.888 6.288 201 5 73.112-1.288 150.843-7.497 205-11 54.157-3.503 84.738-4.3 147-3 62.262 1.3 156.205 4.699 221 3 64.795-1.699 100.441-8.495 158-5 57.559 3.495 137.029 17.28 191 17 53.971-.28 82.443-14.628 148-15 65.557-.372 168.201 13.23 228 18 59.799 4.77 76.754.707 132-4 55.246-4.707 148.785-10.06 190-12 41.215-1.94 30.108-.47 59 1M0 221h0c57.352 4.099 114.705 8.197 169 8 54.295-.197 105.534-4.69 175-3 69.466 1.69 157.161 9.566 224 15 66.839 5.434 112.822 8.427 171 1s128.552-25.273 186-26c57.448-.727 101.97 15.665 161 22 59.03 6.335 132.564 2.611 200-5 67.436-7.611 128.771-19.111 190-23 61.229-3.889 122.35-.166 175-3 52.65-2.834 96.829-12.225 157-6 60.171 6.225 136.335 28.064 171 34 34.665 5.936 27.833-4.032 61-14M0 294h0c62.382 5 124.765 10.001 182 4 57.235-6.001 109.323-23.005 170-22 60.677 1.005 129.944 20.019 186 27 56.056 6.981 98.902 1.93 163-1 64.098-2.93 149.447-3.741 212-12s102.31-23.967 165-15c62.69 8.967 148.315 42.608 219 41 70.685-1.608 126.43-38.464 177-40 50.57-1.536 95.967 32.248 155 37 59.033 4.752 131.701-19.528 197-31 65.299-11.472 123.228-10.135 151-6 27.772 4.135 25.386 11.067 63 18M0 368h0c71.677-6.805 143.353-13.61 208-13 64.647.61 122.263 8.635 170 18 47.737 9.365 85.593 20.07 151 13s158.364-31.918 220-39c61.636-7.082 91.95 3.602 138 8s107.836 2.51 176 10 142.705 24.357 212 24c69.295-.357 133.344-17.938 187-27 53.656-9.062 96.918-9.604 149-4 52.082 5.604 112.984 17.355 187 17 74.016-.355 161.148-12.816 197-16 35.852-3.184 20.426 2.908 45 9M0 442h0c53.121-12.565 106.243-25.13 171-21 64.757 4.13 141.15 24.956 203 30 61.85 5.044 109.158-5.693 161-15s108.218-17.182 168-11c59.782 6.182 122.971 26.422 188 27 65.029.578 131.897-18.505 196-19 64.103-.495 125.442 17.599 190 21s132.335-7.89 191-13c58.665-5.11 108.22-4.04 170-6s135.787-6.95 206-5c70.213 1.95 136.632 10.843 162 14 25.368 3.157 9.684.578 34-2M0 515h0c53.644-9.892 107.288-19.784 163-18 55.712 1.784 113.49 15.243 184 19 70.51 3.757 153.75-2.189 224-5s127.511-2.487 182-5c54.489-2.513 106.205-7.861 160-3s109.67 19.933 169 28 122.117 9.128 188 2 134.864-22.446 194-21c59.136 1.446 108.428 19.656 161 18 52.572-1.656 108.423-23.177 175-30s143.88 1.05 179 6c35.12 4.95 28.06 6.975 61 9M0 589h0c53.145-8.214 106.29-16.428 168-11 61.71 5.428 131.986 24.498 202 25 70.014.502 139.765-17.563 192-20 52.235-2.437 86.954 10.755 145 12 58.046 1.245 139.42-9.457 201-10 61.58-.543 103.367 9.073 161 8 57.633-1.073 131.112-12.835 192-17 60.888-4.165 109.185-.732 167 8s125.146 22.763 190 24c64.854 1.237 127.23-10.32 200-18s155.934-11.48 188-11c32.066.48 13.033 5.24 34 10M0 663h0c51.037-6.646 102.074-13.292 170-10s152.74 16.52 209 18c56.26 1.48 83.965-8.79 146-13 62.035-4.21 158.399-2.361 224-2 65.601.361 100.44-.765 153-1s122.84.423 195-4 146.199-13.927 197-9c50.801 4.927 78.364 24.284 140 26 61.636 1.716 157.346-14.21 223-18 65.654-3.79 101.253 4.557 161 5 59.747.443 143.642-7.016 178-7 34.358.016 19.179 7.508 44 15M0 736h0c62.306 5.003 124.612 10.006 192 12 67.388 1.994 139.86.98 191-6 51.14-6.98 80.95-19.926 141-15 60.05 4.926 150.338 27.722 213 26 62.662-1.722 97.696-27.964 160-32 62.304-4.036 151.879 14.135 213 25 61.121 10.865 93.79 14.426 143 7 49.21-7.426 114.962-25.838 187-25 72.038.838 150.36 20.926 208 26 57.64 5.074 94.595-4.865 153-11s138.259-8.467 175-9c36.741-.533 30.37.734 64 2%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%225%22 stroke-linecap=%22round%22%2F%3E%3Cpath d=%22M0 810h0c56.432 7.046 112.865 14.092 180 17 67.135 2.908 144.974 1.677 209-7 64.026-8.677 114.24-24.799 169-22 54.76 2.799 114.066 24.519 177 33 62.934 8.481 129.496 3.723 185-5 55.504-8.723 99.95-21.41 153-21 53.05.41 114.707 13.918 175 21 60.293 7.082 119.222 7.737 188 3s147.404-14.868 210-21c62.596-6.132 109.16-8.266 167-9s126.954-.067 160 2c33.046 2.067 30.023 5.533 67 9%22 fill=%22none%22 stroke=%22%23fefefe%22 stroke-width=%225%22 stroke-linecap=%22round%22%2F%3E%3Cpath d=%22M0 884h0c72.084 2.724 144.169 5.449 195 12 50.831 6.551 80.41 16.929 144 10 63.59-6.929 161.192-31.165 231-37 69.808-5.835 111.823 6.73 167 16 55.177 9.27 123.516 15.242 177 8 53.484-7.242 92.115-27.7 151-26 58.885 1.7 138.026 25.558 207 25 68.974-.558 127.78-25.53 182-26 54.22-.47 103.853 23.565 167 28 63.147 4.435 139.809-10.729 218-10 78.191.729 157.912 17.351 185 20 27.088 2.649 1.544-8.676 16-20M0 957h0c53.786-3.858 107.572-7.717 167-5 59.428 2.717 124.498 12.009 188 8 63.502-4.009 125.434-21.319 184-19 58.566 2.319 113.765 24.267 180 30 66.235 5.733 143.507-4.75 201-9 57.493-4.25 95.208-2.268 155-3 59.792-.732 141.66-4.178 211-12s126.149-20.018 178-12 98.744 36.252 156 36c57.256-.252 124.877-28.991 199-33s154.75 16.712 186 24 13.125 1.144 35-5M0 1031h0c52.03-.978 104.061-1.956 164 2 59.939 3.956 127.787 12.846 194 9s130.793-20.428 196-19c65.207 1.428 131.043 20.866 186 24 54.957 3.134 99.034-10.036 152-14 52.966-3.964 114.82 1.278 177 0 62.18-1.278 124.687-9.077 194-15s145.432-9.971 207-5c61.568 4.971 108.585 18.961 167 25 58.415 6.039 128.227 4.126 193 4 64.773-.126 124.507 1.535 152 0 27.493-1.535 22.747-6.268 58-11M0 1105h0c51.838-5.463 103.677-10.926 165-8 61.323 2.926 132.13 14.241 201 21s135.8 8.962 196 5c60.2-3.962 113.671-14.088 168-17 54.329-2.912 109.516 1.39 168 6 58.484 4.61 120.266 9.53 183 6 62.734-3.53 126.421-15.508 194-24s139.05-13.5 197-7c57.95 6.5 102.378 24.505 163 28 60.622 3.495 137.437-7.52 204-11 66.563-3.48 122.875.577 148 2s19.062.211 53-1%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%225%22 stroke-linecap=%22round%22%2F%3E%3Cpath d=%22M0 1178h0c72.117 1.87 144.233 3.741 196 5 51.767 1.259 83.184 1.906 140 5 56.816 3.094 139.03 8.636 202 8 62.97-.636 106.698-7.45 169-8 62.302-.55 143.18 5.163 208 2 64.82-3.163 113.584-15.204 167-16 53.416-.796 111.485 9.652 176 18s135.475 14.596 199 5c63.525-9.596 119.615-35.036 180-37 60.385-1.964 125.065 19.548 199 29 73.935 9.452 157.124 6.843 186 3 28.876-3.843 3.438-8.922 18-14%22 fill=%22none%22 stroke=%22%23fefefe%22 stroke-width=%225%22 stroke-linecap=%22round%22%2F%3E%3Cpath d=%22M0 1252h0c51.081 8.217 102.163 16.434 159 15 56.837-1.434 119.43-12.52 186-20s137.115-11.357 200-10c62.885 1.357 118.11 7.946 179 6 60.89-1.946 127.442-12.429 192-9 64.558 3.429 127.12 20.768 189 25 61.88 4.232 123.074-4.643 186-2s127.582 16.805 177 14c49.418-2.805 83.596-22.577 147-30 63.404-7.423 156.032-2.499 224-3 67.968-.501 111.277-6.429 134-5 22.723 1.429 24.862 10.214 67 19M0 1326h0c63.428-1.254 126.856-2.509 194 2s138.003 14.78 193 13c54.997-1.78 94.13-15.613 153-17 58.87-1.387 137.477 9.671 202 13 64.523 3.329 114.963-1.073 171-7 56.037-5.927 117.67-13.38 173-19 55.33-5.62 104.353-9.409 161 2 56.647 11.409 120.916 38.016 188 34 67.084-4.016 136.981-38.654 204-40 67.019-1.346 131.159 30.6 198 34 66.841 3.4 136.383-21.743 164-29 27.617-7.257 13.308 3.371 39 14%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%225%22 stroke-linecap=%22round%22%2F%3E%3C%2Fsvg%3E");
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 3rem;
+  }
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards-container {
+    margin-left: 0;
+    align-items: center;
+  }
+  .cards-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .service-card {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+  }
 }
+
 
 
 /* Add existing styles for other sections if needed */
@@ -571,16 +599,25 @@ p {
 /* Testimonials Section */
 .testimonials-section {
   padding: 40px 20px;
-  background-color: #f5f5f5;
+  background-color: white;
   text-align: center;
+  align-items: center;
+ 
+}
+.testimonials-title{
+  margin-left: 20rem;
+  margin-bottom: 50px;
+  font-size: 5rem;
+  text-align: justify;
 }
 
 .testimonials-container {
   display: flex;
   justify-content: center;
   gap: 40px;
-  max-width: 1200px;
+  max-width: 60vw;
   margin: 0 auto;
+  align-items: center;
 }
 
 .testimonial-card {
@@ -620,6 +657,23 @@ p {
   font-size: 1rem;
   color: #000;
   margin-top: 10px;
+}
+
+/* Responsive adjustments for testimonials */
+@media (max-width: 768px) {
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .testimonial-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  .testimonials-title {
+    margin-left: 0;
+    font-size: 3rem;
+  }
 }
 
 /* Floating WhatsApp Icon */
@@ -665,156 +719,142 @@ p {
   opacity: 0.7;
 }
 
+
 /* Media Queries */
-@media (max-width: 992px) {
-  .hero {
-    min-height: 50vh;
-  }
-
-  .hero-content {
-    padding: 2rem 1rem;
-  }
-
-  .welcome-text {
-    font-size: 2.5rem;
-  }
-
-  .subtitle-text {
-    font-size: 1.5rem;
-  }
-
-  .split-section {
+@media (max-width: 1200px) {
+  .top-bar {
+    padding: 0.5rem;
+    justify-content: center;
     flex-direction: column;
-    margin: 2rem 0;
+    text-align: center;
   }
-
-  .text-content h2 {
-    font-size: 2rem;
+  .hero-content {
+    flex-direction: column;
   }
-
-  .text-content p {
-    font-size: 1.1rem;
+  .text-content {
+    flex: 1;
+    text-align: center;
+    padding-right: 0;
   }
-
   .image-container {
+    flex: 1;
     width: 100%;
   }
-
-  .years-image {
-    width: 150px;
+  .subtitle-text {
+    font-size: 3.5rem;
   }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .why-section .grid-container {
+    grid-template-columns: 1fr;
   }
-
-  .project-image {
-    height: 150px;
+  .services-grid {
+    flex-direction: column;
+  }
+  .cards-row {
+    flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-content {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu.open .nav-links {
+    display: flex;
     flex-direction: column;
-    align-items: center;
   }
-
-  .text-content {
-    flex: 0 0 100%;
-    margin-bottom: 1rem;
+  .welcome-text {
+    font-size: 1.5rem;
   }
-
-  .image-container {
-    flex: 0 0 100%;
-    height: 300px;
+  .subtitle-text {
+    font-size: 2.5rem;
   }
-
-  .hero h1 {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .years-number {
+    font-size: 6rem;
+  }
+  .years-label {
     font-size: 2rem;
   }
-
-  .cta-button {
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
+  .header-why {
+    font-size: 3rem;
   }
-
-  .whatsapp_float {
-    width: 50px;
-    height: 50px;
-    bottom: 15px;
-    right: 15px;
+  .services-title {
+    font-size: 2.5rem;
   }
-
-  .whatsapp-icon {
-    font-size: 24px;
+  .projects-title {
+    font-size: 2.5rem;
   }
-
-  .signature {
-    font-size: 1.1rem;
+  .testimonials-title {
+    font-size: 2.5rem;
+    align-items: center;
+    text-align: center;
   }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-image {
-    height: 120px;
+  .carousel {
+    max-width: 90%;
   }
 }
 
 @media (max-width: 480px) {
-  .landing-page {
-    padding: 1rem 0.5rem;
+  .top-bar {
+    font-size: 0.8rem;
   }
-
-  .hero {
-    min-height: 40vh;
+  .logo-image {
+    max-height: 3rem;
   }
-
-  .hero-content {
-    padding: 1.5rem 0.5rem;
-  }
-
   .welcome-text {
-    font-size: 1.5rem;
-  }
-
-  .subtitle-text {
     font-size: 1.2rem;
   }
-
-  .text-content h2 {
+  .subtitle-text {
     font-size: 1.8rem;
   }
-
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .years-number {
+    font-size: 4rem;
+  }
+  .years-label {
+    font-size: 1.5rem;
+  }
   .text-content p {
     font-size: 1rem;
   }
-
-  .years-image {
-    width: 120px;
+  .header-why {
+    font-size: 2.5rem;
+  }
+  .services-title {
+    font-size: 2rem;
+  }
+  .service-card {
+    max-width: 200px;
+    min-height: 200px;
+  }
+  .card-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .projects-title {
+    font-size: 2rem;
+  }
+  .testimonials-title {
+    font-size: 3rem;
   }
 
-  .image-container {
-    height: 200px;
-  }
-
+ 
   .whatsapp_float {
-    width: 40px;
-    height: 40px;
-    bottom: 10px;
-    right: 10px;
+    width: 2.5rem;
+    height: 2.5rem;
   }
-
   .whatsapp-icon {
-    font-size: 20px;
-  }
-
-  .signature {
-    font-size: 1rem;
-  }
-
-  .project-image {
-    height: 100px;
+    font-size: 1.5rem;
   }
 }
