@@ -417,7 +417,8 @@ const Home = (props) => {
                       <h4 style={{ color: "white" }}>3D Signage</h4>
                     </div>
                     <div className="card-back">
-                      <p style={{ color: "white",height:'300px',width:'300px' }}>Our talented graphic designers transform your concepts into visually stunning
+                      <p style={{ color: "white" }}>
+                      Our talented graphic designers transform your concepts into visually stunning
                       designs.</p>
                     </div>
                   </div>
