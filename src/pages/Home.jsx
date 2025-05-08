@@ -19,7 +19,7 @@ import liv from '../assets/livonia.jpg';
 import perfect from '../assets/perfect.jpg';
 import pgman from '../assets/Printguy man.png'
 
-// Load Bootstrap JS
+
 const loadBootstrap = () => {
   const script = document.createElement("script");
   script.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";
@@ -32,7 +32,7 @@ const Home = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [flippedCards, setFlippedCards] = useState([false, false, false, false]);
 
-  // Track mouse movement
+  // track mouse movement
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -45,7 +45,7 @@ const Home = (props) => {
     };
   }, []);
 
-  // Load Bootstrap JS when the component mounts
+  
   useEffect(() => {
     loadBootstrap();
   }, []);
@@ -63,7 +63,7 @@ const Home = (props) => {
     }
   };
 
-  // Toggle flip state for a specific card
+  //  flip state for a specific card
   const toggleFlip = (index) => {
     setFlippedCards((prev) =>
       prev.map((flipped, i) => (i === index ? !flipped : flipped))
@@ -107,19 +107,19 @@ const Home = (props) => {
     >
       {/* Top Bar */}
       <div className="top-bar">
-      <span>
+      <span className="gab">
           <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
           </svg>
           Gaberone Plaza 6th Floor CS2
         </span>
-        <a href="https://www.printguy.co.ke">
+        <a href="https://www.printguy.co.ke" className="gab-1">
           <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
           </svg>
           www.printguy.co.ke
         </a>
-        <span>
+        <span className="gab-2">
           <CiClock2 className="icon" />
           Mon - Saturday, 8am - 8pm
         </span>
@@ -142,8 +142,8 @@ const Home = (props) => {
             <button className="close-btn" onClick={toggleMenu}>✕</button>
             <ul className="nav-links">
               <li><a href="#hero-section" onClick={() => scrollToSection("hero-section")}>Home</a></li>
-              <li><a href="#services-section" onClick={() => scrollToSection("services-section")}>Services</a></li>
               <li><a href="#about-section" onClick={() => scrollToSection("about-section")}>About Us</a></li>
+              <li><a href="#services-section" onClick={() => scrollToSection("services-section")}>Services</a></li>
               <li><a href="#contact-section" onClick={() => scrollToSection("contact-section")}>Contact</a></li>
             </ul>
           </nav>
