@@ -234,10 +234,11 @@ const Home = (props) => {
               flex: 0 0 100%;
               height: 100%;
               min-height:60vh;
+              border-radius:0px;
             }
 
             .hero-image {
-              max-height: 60vh;
+              max-height: 80vh;
               object-fit: cover;
             }
 
@@ -557,11 +558,6 @@ const Home = (props) => {
           Say about us
         </h2>
         <div className="testimonials-container">
-          <div className="testimonial-card">
-            <div className="speech-bubble"></div>
-            <div className="avatar"></div>
-            <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
-          </div>
           <div className="testimonial-card">
             <div className="speech-bubble"></div>
             <div className="avatar"></div>
