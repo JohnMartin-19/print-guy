@@ -379,7 +379,7 @@ p {
 
 .why-section .worker-image {
   position: absolute;
-  top: -150px;
+  top: -450px;
   bottom: 0;
   width: 100%;
   height: calc(90vh + 100px);
