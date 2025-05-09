@@ -1162,25 +1162,28 @@ p {
   width: 100%;
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: 0.0rem;
+  position: relative;
 }
 
 
   .why-section .image-container {
-    position: relative;
+    position:relative ;
     height: 100%;
     width: 100%;
   }
   
   .why-section .worker-image {
     position: absolute;
-    top: -240px;
+    right: 0;
+    top: -160px;
     bottom: 0;
     width: 100%;
-    height: calc(90vh + 100px);
+    height: calc(100vh + 100px);
     object-fit: cover;
     border-radius: 0.0rem;
     z-index: 0;
+    clip-path: inset(0 0 19.67% 0);
   }
 }
 
