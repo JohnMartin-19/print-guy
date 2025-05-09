@@ -173,7 +173,7 @@ const Home = (props) => {
               justify-content: center;
               align-items: center;
               width: 100%;
-              min-height: 60vh;
+              min-height: 80vh;
               background-color: #002060;
               background-size: cover;
               background-position: center;
@@ -203,14 +203,14 @@ const Home = (props) => {
 
             .welcome-text {
               color: #f7941d;
-              font-size: 2rem;
+              font-size: 1.5rem;
               font-weight: 100;
             }
 
             .subtitle-text {
               color: white;
-              font-size: 7rem;
-              font-weight: 700;
+              font-size:7rem;
+              font-weight: 1200;
             }
 
             .cta-button {
@@ -233,14 +233,12 @@ const Home = (props) => {
             .image-container {
               flex: 0 0 100%;
               height: 100%;
+              min-height:60vh;
             }
 
             .hero-image {
               max-height: 60vh;
-              height:700px;
-              width:700px;
               object-fit: cover;
-              min-height: 50vh;
             }
 
             @media (max-width: 768px) {
@@ -265,13 +263,15 @@ const Home = (props) => {
         </style>
         <div className="hero-content" id="hero-section">
           <div className="text-content">
-            <motion.h1 variants={itemVariants}>
-              <span className="welcome-text">Welcome to Print Guy</span>
+            <motion variants={itemVariants}>
+              <h4 className="welcome-text">Welcome to Print Guy</h4>
               <br />
               <span className="subtitle-text">
-                <h1 className="subtitle-text">Your One-Stop Advertising Solution!</h1>
+                <h2 className="subtitle-text" id='header-text' style={{fontSize:'5rem'}}>Your One-Stop 
+                  <br />
+                  Advertising Solution!</h2>
               </span>
-            </motion.h1>
+            </motion>
             <motion.div variants={itemVariants}>
               <a href="#services-section" onClick={() => scrollToSection("services-section")} className="cta-button">
                 Discover More
@@ -285,9 +285,9 @@ const Home = (props) => {
       </motion.section>
 
       {/* About Our Company Section */}
-      <h1 className="section-title" style={{ marginTop:'10px' }}>
+      <h2 className="section-title" style={{ marginTop:'10px' }}>
         About Our Company
-      </h1>
+      </h2>
       <motion.section className="about-section" variants={containerVariants} id="about-section">
         <div className="years-container">
           <p className="years-number">20</p>
@@ -305,16 +305,11 @@ const Home = (props) => {
             <p className="about-p" style={{ color: "#002060" }}>
               When we first started 20 years ago, we were intrigued by the number of
               businesses that didn’t have proper presentation.
-              <br />
-              <br />
               From the very beginning, we believed in our customers’ potential to connect
               with their ideal audience. With our passion for creativity and belief in visual
               communication, we transformed the faces of brands.
-              <br />
-              <br /> Marketing is more than just business; it’s community. At Printguy
+              Marketing is more than just business; it’s community. At Printguy
               Limited, we believe in lasting relationships.
-              <br />
-              <br />
               We bring more than just state-of-the-art equipment; we bring an experienced
               team of professionals committed to making your brand a success.
             </p>
@@ -346,11 +341,11 @@ const Home = (props) => {
               viewport={{ once: true }}
               variants={fadeInVariants}
             >
-              <h1 className="header-why" style={{marginBottom:'20px' }}>
-                <span>Why Choose </span>
+              <h2 className="header-why" style={{marginBottom:'10px',fontSize:'4rem' }}>
+                <span style={{color:'orange'}}>Why Choose </span>
                 <br />
                 Printguy
-              </h1>
+              </h2>
               <br />
               <p>
                 At Printguy Limited, our objective is to deliver services that exceed
@@ -359,11 +354,11 @@ const Home = (props) => {
                 To continuously improve our processes and adopt the latest technologies to
                 stay ahead in the advertising industry.
                 <br />
-                <br />
                 We are committed to leading the market by setting new standards of
                 excellence, while maintaining sustainability through eco-friendly
                 practices.
-                <br />Our goal is to serve an even broader client base while maintaining
+                <br />
+                Our goal is to serve an even broader client base while maintaining
                 superior service quality.
               </p>
             </motion.div>
