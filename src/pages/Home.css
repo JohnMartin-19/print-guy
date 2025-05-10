@@ -107,6 +107,7 @@ p {
 .logo-image {
   max-height: 70px;
   width: auto;
+  margin-right: 3rem;
 }
 
 .nav-menu {
@@ -379,7 +380,7 @@ p {
 
 .why-section .worker-image {
   position: absolute;
-  top: -450px;
+  top: -250px;
   bottom: 0;
   width: 100%;
   height: calc(90vh + 100px);
@@ -882,6 +883,8 @@ p {
     max-height: 70px;
     width: auto;
     float: left;
+    margin-left:-32rem;
+    margin-right: 5rem;
   }
 
   .nav-menu {
@@ -894,7 +897,7 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 2rem;
+    gap: 6rem;
     justify-content: center;
     align-items: center;
   }

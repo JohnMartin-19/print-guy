@@ -131,8 +131,9 @@ const Home = (props) => {
           <div className="navbar-header">
             <div className="logo" onClick={() => scrollToSection("hero-section")}>
               <img src={logo} alt="Print Guy Logo" className="logo-image" />
+              |
             </div>
-            |
+            
             <button className="hamburger" onClick={toggleMenu}>
               <span className="bar"></span>
               <span className="bar"></span>
