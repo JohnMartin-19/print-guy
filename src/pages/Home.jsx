@@ -132,6 +132,7 @@ const Home = (props) => {
             <div className="logo" onClick={() => scrollToSection("hero-section")}>
               <img src={logo} alt="Print Guy Logo" className="logo-image" />
             </div>
+            |
             <button className="hamburger" onClick={toggleMenu}>
               <span className="bar"></span>
               <span className="bar"></span>
@@ -144,7 +145,8 @@ const Home = (props) => {
               <li><a href="#hero-section" onClick={() => scrollToSection("hero-section")}>Home</a></li>
               <li><a href="#about-section" onClick={() => scrollToSection("about-section")}>About Us</a></li>
               <li><a href="#services-section" onClick={() => scrollToSection("services-section")}>Services</a></li>
-              <li><a href="#contact-section" onClick={() => scrollToSection("contact-section")}>Contact</a></li>
+              <li><a href="#projects-section" onClick={() => scrollToSection("projects-section")}>Products</a></li>
+              <li><a href="#contact-section" onClick={() => scrollToSection("contact-section")}>Contact</a></li> |
             </ul>
           </nav>
         </div>
@@ -470,6 +472,7 @@ const Home = (props) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          id="projects-section"
         >
           <h2 className="projects-title">Our Latest Projects</h2>
           <div id="demo" className="carousel slide" data-bs-ride="carousel">

@@ -795,7 +795,7 @@ p {
 }
 
 /* Media Queries */
-@media (max-width:2400px) {
+@media (min-width: 1920px) and (max-width: 2560px) {
   /* Top Bar */
   .top-bar {
     background-color: #f5f5f5;
@@ -874,11 +874,14 @@ p {
     align-items: center;
     text-decoration: none;
     cursor: pointer;
+    float: left;
+
   }
 
   .logo-image {
     max-height: 70px;
     width: auto;
+    float: left;
   }
 
   .nav-menu {
@@ -949,7 +952,7 @@ p {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 60vh;
+    max-height: 50vh;
     background-color: #002060;
     background-size: cover;
     background-position: center;
@@ -978,14 +981,14 @@ p {
 
   .welcome-text {
     color: #f7941d;
-    font-size: 1rem;
+    font-size: 2rem;
     
   }
 
   .subtitle-text {
     color: white;
-    font-size: 7rem;
-    font-weight: 100;
+    font-size: 9rem;
+    font-weight: 700;
   }
 
   .header-text{
@@ -1029,7 +1032,7 @@ p {
   max-width: 90%;
   margin:0;
   color: #002060;
-  max-height: 70vh;
+  max-height: 40vh;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -1047,8 +1050,8 @@ p {
 .years-container {
   flex: 0 0 20%;
   text-align: center;
-  margin-top:-350px;
-  top: -150px;
+  margin-top:-650px;
+  top: -250px;
 }
 
 .years-number {
@@ -1119,7 +1122,7 @@ p {
 /* Why choose us seciton */
 .why {
   background-color: #002060;
-  min-height: 50vh;
+  max-height: 50vh;
   position: relative;
 }
 
@@ -1130,7 +1133,7 @@ p {
 
 .why-section {
   max-width: 80%;
-  margin-left: 7rem;
+  margin-left: 11rem;
   padding: 3rem 0;
 }
 
@@ -1176,15 +1179,20 @@ p {
   .why-section .worker-image {
     position: absolute;
     right: 0;
-    top: -160px;
+    top: -350px;
     bottom: 0;
     width: 100%;
-    height: calc(100vh + 100px);
+    height: calc(70vh + 100px);
     object-fit: cover;
     border-radius: 0.0rem;
     z-index: 0;
-    clip-path: inset(0 0 19.67% 0);
+    clip-path: inset(0 0 10.67% 0);
   }
+  .services-section{
+    align-items: center;
+    margin-left: 10rem;
+  }
+  
 }
 
 
@@ -1318,11 +1326,29 @@ p {
 
 @media (max-width: 480px) {
   .top-bar {
-    font-size: 0.8rem;
-    max-width: 95%;
+    font-size: 0rem;
+    max-width: 100%;
+    margin:0 auto;
   }
+  .top-bar a, .top-bar span {
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+    text-decoration: none;
+  }
+   .gab{
+    margin-left: 0rem;
+  }
+  .gab-1{
+    margin-right: 0rem;
+  }
+  
+  .gab-2{
+    margin-right: 0rem;
+  }
+  
   .navbar {
-    max-width: 95%;
+    max-width: 100%;
   }
   .hero-content {
     max-width: 95%;
