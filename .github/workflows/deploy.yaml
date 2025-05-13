@@ -1,4 +1,4 @@
-name: CI/CD Pipeline for React App to AWS S3
+name: CI/CD Pipeline for Print Guy Website to AWS S3
 
 on:
   push:

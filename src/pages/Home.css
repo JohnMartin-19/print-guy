@@ -682,9 +682,9 @@ p {
 
 .testimonials-title {
   margin-bottom: 50px;
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 700;
-  text-align: center;
+  text-align: justify;
 }
 
 .testimonials-container {
