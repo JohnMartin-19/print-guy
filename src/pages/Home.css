@@ -278,24 +278,14 @@ p {
 .years-container {
   flex: 0 0 20%;
   text-align: center;
-  margin-top:-350px;
-  top: -150px;
+  max-height: 40vh;
+  margin-top: -550px;
+}
+.years-img{
+  height: 400px;
+  width: 500px;
 }
 
-.years-number {
-  font-size:10rem;
-  font-weight: 700;
-  color: #fc880c;
-}
-
-.years-label {
-  font-family: 'Dancing Script', cursive;
-  font-style: oblique;
-  font-size: 4.5rem;
-  font-weight: 400;
-  color: #002060;
-  margin: 0;
-}
 
 .text-content {
   margin-top: 10px;
@@ -1067,6 +1057,7 @@ p {
   text-align: center;
   margin-top:-650px;
   top: -250px;
+  margin-left: -20rem;
 }
 
 .years-number {

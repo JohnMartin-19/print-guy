@@ -19,6 +19,7 @@ import liv from '../assets/livonia.jpg';
 import perfect from '../assets/perfect.jpg';
 import pgman from '../assets/Printguy man.png'
 import { FaAngleDown } from "react-icons/fa6";
+import years from "../assets/Elements-01.png"
 
 
 const loadBootstrap = () => {
@@ -295,8 +296,7 @@ const Home = (props) => {
       </h2>
       <motion.section className="about-section" variants={containerVariants} id="about-section">
         <div className="years-container">
-          <p className="years-number">20</p>
-          <p className="years-label">Years</p>
+          <img src={years} alt="" className="years-img" />
         </div>
         <div className="split-content">
           <motion.div className="div"></motion.div>
