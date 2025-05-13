@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
-import { IoPrintSharp } from "react-icons/io5";
+
 import { FaWhatsapp } from "react-icons/fa";
 import { GiClothes } from "react-icons/gi";
-import { BsFillBadge3dFill } from "react-icons/bs";
 import homeImage from '../assets/image.jpg';
 import fao from '../assets/fao.jpg';
 import logo from "../assets/printguy_logo.jpeg";
@@ -452,7 +451,7 @@ const Home = (props) => {
                 >
                   <div className="card-inner">
                     <div className="card-front">
-                      <GiClothes className="card-icon" />
+                      <img src={cloth} alt="" className="card-icon" />
                       <h4 style={{ color: "white" }}>Clothing & Apparel</h4>
                     </div>
                     <div className="card-back">
