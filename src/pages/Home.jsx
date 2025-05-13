@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
-
 import { FaWhatsapp } from "react-icons/fa";
-import { GiClothes } from "react-icons/gi";
 import homeImage from '../assets/image.jpg';
 import fao from '../assets/fao.jpg';
 import logo from "../assets/printguy_logo.jpeg";
