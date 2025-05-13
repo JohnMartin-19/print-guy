@@ -20,6 +20,10 @@ import perfect from '../assets/perfect.jpg';
 import pgman from '../assets/Printguy man.png'
 import { FaAngleDown } from "react-icons/fa6";
 import years from "../assets/Elements-01.png"
+import largePrint from '../assets/Elements-04.png'
+import smallPrint from '../assets/Elements-03.png'
+import threeD from '../assets/Elements-05.png'
+import cloth from '../assets/Elements-06.png'
 
 
 const loadBootstrap = () => {
@@ -398,7 +402,7 @@ const Home = (props) => {
                 >
                   <div className="card-inner">
                     <div className="card-front">
-                      <IoPrintSharp className="card-icon" />
+                      <img src={smallPrint} alt="" className="card-icon" />
                       <h4>Digital Printing</h4>
                     </div>
                     <div className="card-back">
@@ -413,7 +417,7 @@ const Home = (props) => {
                 >
                   <div className="card-inner">
                     <div className="card-front">
-                      <BsFillBadge3dFill className="card-icon" />
+                      <img src={threeD} alt="" className="card-icon" />
                       <h4 style={{ color: "white" }}>3D Signage</h4>
                     </div>
                     <div className="card-back">
@@ -432,6 +436,7 @@ const Home = (props) => {
                 >
                   <div className="card-inner">
                     <div className="card-front">
+                      <img src={largePrint} alt="" className="card-icon" />
                       <h4>Large Format Printing</h4>
                     </div>
                     <div className="card-back">
