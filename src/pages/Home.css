@@ -1056,9 +1056,9 @@ p {
 .years-container {
   flex: 0 0 20%;
   text-align: center;
-  margin-top:-650px;
-  top: -250px;
-  margin-left: -20rem;
+  margin-top:10px;
+  top: 10px;
+  margin-left: 10rem;
 }
 
 .years-number {
