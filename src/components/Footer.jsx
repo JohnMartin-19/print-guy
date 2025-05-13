@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok } from "react-icons/fa";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import "./Footer.css";
 
 const Footer = () => {
