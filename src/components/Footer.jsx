@@ -17,7 +17,7 @@ const Footer = () => {
         >
           <div className="footer-row">
             <div>
-              <h3> <span><FontAwesomeIcon icon={faLocationDot} /></span> Location</h3>
+              <h3>  Location</h3>
               <p>
                 Gaberone Plaza,
                 <br/>
@@ -25,7 +25,7 @@ const Footer = () => {
               </p>
             </div>
             <div>
-              <h3><span className="icon">&#x260E;</span>Contacts</h3>
+              <h3>Contacts</h3>
               <p>
                  (+254) 0722333850 
                  <br />
@@ -33,7 +33,7 @@ const Footer = () => {
               </p>
             </div>
             <div>
-              <h3><span className="icon">&#x2709;</span>Email</h3>
+              <h3>Email</h3>
               <p>
                 <a href="mailto:hello@printguy.co.ke">hello@printguy.co.ke</a> 
                 <br />

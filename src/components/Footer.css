@@ -75,7 +75,8 @@ body{
 .icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0rem;
+  
 }
 
 .icons a {
