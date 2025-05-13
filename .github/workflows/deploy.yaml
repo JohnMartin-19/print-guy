@@ -1,0 +1,72 @@
+name: CI/CD Pipeline for React App to AWS S3
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Match your app's Node.js version
+
+      # Cache npm dependencies
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm ci
+
+      # # Run tests (optional; comment out if no tests)
+      # - name: Run Tests
+      #   run: npm test -- --coverage
+      #   env:
+      #     CI: true
+
+      # Build the React app
+      - name: Build
+        run: npm run build
+        env:
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }} # Add other env vars as needed
+
+      # Configure AWS CLI
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: '${{ secrets.AWS_ACCESS_KEY_ID }}'
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # Sync build folder to S3
+      - name: Sync to S3
+        run: |
+          aws s3 sync ./build/ s3://${{ secrets.AWS_S3_BUCKET }} --delete --cache-control max-age=31536000
+          aws s3 cp ./build/index.html s3://${{ secrets.AWS_S3_BUCKET }}/index.html --cache-control no-cache
+          aws s3 cp ./build/asset-manifest.json s3://${{ secrets.AWS_S3_BUCKET }}/asset-manifest.json --cache-control no-cache
+
+      # # Invalidate CloudFront cache (optional)
+      # - name: Invalidate CloudFront Cache
+      #   if: github.event_name == 'push' # Only invalidate on push, not PR
+      #   run: |
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
+      #       --paths "/*"

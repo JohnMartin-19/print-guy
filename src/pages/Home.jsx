@@ -18,6 +18,7 @@ import law from '../assets/law.jpg';
 import liv from '../assets/livonia.jpg';
 import perfect from '../assets/perfect.jpg';
 import pgman from '../assets/Printguy man.png'
+import { FaAngleDown } from "react-icons/fa6";
 
 
 const loadBootstrap = () => {
@@ -144,9 +145,9 @@ const Home = (props) => {
             <button className="close-btn" onClick={toggleMenu}>✕</button>
             <ul className="nav-links">
               <li><a href="#hero-section" onClick={() => scrollToSection("hero-section")}>Home</a></li>
-              <li><a href="#about-section" onClick={() => scrollToSection("about-section")}>About Us</a></li>
+              <li><a href="#about-section" onClick={() => scrollToSection("about-section")}>About Us<FaAngleDown /></a></li>
               <li><a href="#services-section" onClick={() => scrollToSection("services-section")}>Services</a></li>
-              <li><a href="#projects-section" onClick={() => scrollToSection("projects-section")}>Products</a></li>
+              <li><a href="#projects-section" onClick={() => scrollToSection("projects-section")}>Products<FaAngleDown /></a></li>
               <li><a href="#contact-section" onClick={() => scrollToSection("contact-section")}>Contact</a></li> |
             </ul>
           </nav>
