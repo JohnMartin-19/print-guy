@@ -20,11 +20,7 @@ const Footer = () => {
               <h3> <span><FontAwesomeIcon icon={faLocationDot} /></span> Location</h3>
               <p>
                 Gaberone Plaza,
-                <br />
-                Gaberone Road, 
-                <br />
-                6th Floor,Suite C5
-                <br />
+                <br/>
                 Nairobi, Kenya.
               </p>
             </div>

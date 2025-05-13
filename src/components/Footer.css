@@ -11,8 +11,10 @@ body{
   color: white;
   text-align: center;
   padding: 2rem 0;
-  font-size: 1.2rem;
-  height: 50vh; /* Increased text size for the entire footer */
+  font-size: 0rem;
+  height: 50vh; 
+  font-family: 'Montserrat', sans-serif;
+  /* Increased text size for the entire footer */
 }
 
 .footer-container {
@@ -21,10 +23,12 @@ body{
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-details {
   width: 80%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-row {
@@ -33,12 +37,13 @@ body{
   align-items: center;
   text-align: left;
   gap: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-row p {
   flex: 1; /* Equal column sizes */
   margin: 0;
-  color: white;
+  color:orange;
 }
 
 .footer-details .icon {
@@ -98,7 +103,7 @@ body{
     flex-direction: column; /* Stack the columns vertically */
     align-items: flex-start;
     text-align: left;
-    align-items: center;
+    align-items: left;
   }
   
   .footer-details {
