@@ -467,6 +467,7 @@ const Home = (props) => {
         </motion.section>
       </div>
 
+      <h2 className="projects-title">Our Latest Projects</h2>
       <div className="projects">
         <motion.section
           className="projects-section"
@@ -476,7 +477,7 @@ const Home = (props) => {
           viewport={{ once: true }}
           id="projects-section"
         >
-          <h2 className="projects-title">Our Latest Projects</h2>
+          
           <div id="demo" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
               <button type="button" data-bs-target="#demo" data-bs-slide-to="0" className="active"></button>
