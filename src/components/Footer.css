@@ -65,6 +65,7 @@ body{
 .social-links {
   text-align: center;
   color: white;
+  gap: 15px;
 }
 
 .social-links h3 {
@@ -75,8 +76,8 @@ body{
 .icons {
   display: flex;
   justify-content: center;
-  gap: 0rem;
-  
+  gap: 1rem;
+
 }
 
 .icons a {
