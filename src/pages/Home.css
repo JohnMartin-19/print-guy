@@ -1292,26 +1292,7 @@ p {
 }
 
 /* Media query for mobile responsiveness */
-@media (min-width: 200px) and (max-width: 932px) {
-  .footer{
-    min-height: 60hv;
-  }
-  .footer-row {
-    flex-direction: column; /* Stack the columns vertically */
-    align-items: flex-start;
-    text-align: left;
-    align-items: left;
-  }
-  
-  .footer-details {
-    width: 100%;
-    align-items: center; /* Ensure footer details span full width on smaller screens */
-  }
-  
-  .social-links {
-    margin-top: 1rem;
-  }
-}
+
 
 
 
@@ -1409,22 +1390,23 @@ p {
   }
   .about-section{
     min-height: fit-content;
+    align-items: center;
+  }
+  .years-img{
+    align-items: center;
+    margin-top: -2rem;
+    margin-left: -4rem;
   }
   .years-container {
     flex: 0 0 20%;
     text-align: center;
     margin-top:0px;
-  
+    margin-bottom: 10px;
   }
   .section-title {
     font-size: 2.5rem;
   }
-  .years-number {
-    font-size: 6rem;
-  }
-  .years-label {
-    font-size: 2rem;
-  }
+ 
   .header-why {
     font-size: 2.5rem;
   }
@@ -1488,6 +1470,26 @@ p {
   }
   .signature-container {
     justify-content: center;
+  }
+  .footer{
+    min-height: 60hv;
+    font-size: 1rem;
+  }
+  .footer-row {
+    flex-direction: column; /* Stack the columns vertically */
+    align-items: flex-start;
+    text-align: left;
+    align-items: left;
+  }
+  
+  .footer-details {
+    width: 100%;
+    flex-direction: column;
+    align-items: center; /* Ensure footer details span full width on smaller screens */
+  }
+  
+  .social-links {
+    margin-top: 1rem;
   }
 }
 }
