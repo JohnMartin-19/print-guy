@@ -667,15 +667,18 @@ p {
   align-items: center;
 }
 
-/* Testimonials Section */
+
+/* Fix Testimonials Section to Prevent White Gap */
 .testimonials-section {
   padding: 40px 20px;
   background-color: white;
   text-align: center;
-  max-width: 70%;
+  width: 100%; /* Full width to avoid gaps */
+  max-width: 100%; /* Override previous max-width */
   margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Ensure it’s below footer */
 }
-
 .testimonials-title {
   margin-bottom: 50px;
   font-size: 3rem;
@@ -1198,98 +1201,116 @@ p {
   
 }
 .footer {
-  margin-top: 6rem;
-  background: #002060; /* Orange */
+  background: #002060;
   color: white;
   text-align: center;
-  padding: 2rem 0;
-  font-size: 0rem;
-  height: 50vh; 
+  padding: 2rem 1rem;
   font-family: 'Montserrat', sans-serif;
-  /* Increased text size for the entire footer */
+  margin-top: 2rem; /* Reduced margin to minimize white space */
+  min-height: auto; /* Allow footer to adapt to content */
+  width: 100%;
+  overflow: hidden;
 }
 
 .footer-container {
-  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px; /* Constrain content width on larger screens */
+  margin: 0 auto; /* Remove excessive margin-top */
 }
 
 .footer-details {
-  width: 80%;
-  font-family: 'Montserrat', sans-serif;
+  width: 100%;
 }
 
 .footer-row {
   display: flex;
-  justify-content: space-between; /* Distribute items evenly */
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   text-align: left;
-  gap: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  gap: 2rem;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.footer-row div {
+  flex: 1;
+  min-width: 200px; /* Ensure columns don’t collapse too small */
+}
+
+.footer-row h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 0.5rem;
+  color: #ffa500; /* Orange for headings */
 }
 
 .footer-row p {
-  flex: 1; /* Equal column sizes */
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   margin: 0;
-  color:orange;
+  color: white; /* White text for better contrast */
+  line-height: 1.5;
 }
 
-.footer-details .icon {
-  font-size: 1.5rem; /* Increase icon size */
-  margin-right: 0.5rem;
+.footer-row p a {
+  color: #ffa500;
+  text-decoration: none;
 }
 
-.footer-brand {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-}
-
-.footer-brand .heart {
-  color: #ffa500; /* Heart color */
-  font-size: 1.5rem;
+.footer-row p a:hover {
+  color: #e07b0e;
 }
 
 .social-links {
-  text-align: center;
-  color: white;
-  gap: 15px;
+  text-align: left;
 }
 
 .social-links h3 {
-  margin-bottom: 0.5rem;
-  
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 1rem;
+  color: #ffa500;
 }
 
 .icons {
   display: flex;
-  justify-content: center;
   gap: 1rem;
-
 }
 
 .icons a {
   font-size: 1.5rem;
-  color: #ffa500;
+  color:white;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .icons a:hover {
-  color: #002060;
+  color: #e07b0e;
   transform: scale(1.2);
 }
 
 .footer-line {
-  width: 80%;
+  width: 100%;
   height: 1px;
   background-color: white;
-  margin: 1rem auto;
-  transform-origin: left;
+  margin: 1.5rem auto;
 }
+
+.footer-brand {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: white;
+}
+
+.footer-brand .heart {
+  color: #ffa500;
+  font-size: 1.2rem;
+}
+
+.footer-brand h6 {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+}
+
+
 
 /* Media query for mobile responsiveness */
 
@@ -1471,25 +1492,79 @@ p {
   .signature-container {
     justify-content: center;
   }
-  .footer{
-    min-height: 60hv;
-    font-size: 1rem;
+  .footer {
+    padding: 1.5rem 1rem;
+    margin-top: 1rem;
+    min-height: auto; /* Fix typo and allow content-driven height */
+    font-size: 1rem; /* Base font size for mobile */
   }
-  .footer-row {
-    flex-direction: column; /* Stack the columns vertically */
-    align-items: flex-start;
-    text-align: left;
-    align-items: left;
+
+  .footer-container {
+    align-items: flex-start; /* Left-align container */
+    padding: 0 1rem;
   }
-  
+
   .footer-details {
     width: 100%;
-    flex-direction: column;
-    align-items: center; /* Ensure footer details span full width on smaller screens */
   }
-  
+
+  .footer-row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Left-align items */
+    gap: 1.5rem;
+  }
+
+  .footer-row div {
+    min-width: 100%; /* Full width for each column */
+  }
+
+  .footer-row h3 {
+    font-size: clamp(1rem, 4vw, 1.2rem); /* Smaller headings */
+  }
+
+  .footer-row p {
+    font-size: clamp(0.8rem, 3vw, 0.9rem); /* Smaller text */
+  }
+
   .social-links {
     margin-top: 1rem;
+    text-align: left;
+  }
+
+  .social-links h3 {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+
+  .icons {
+    gap: 0.8rem;
+  }
+
+  .icons a {
+    font-size: 1.2rem; /* Smaller icons for mobile */
+  }
+
+  .footer-line {
+    width: 90%;
+    margin: 1rem 0;
+  }
+
+  .footer-brand {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    text-align: left;
+  }
+
+  .testimonials-section {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .testimonials-container {
+    gap: 1rem;
+  }
+
+  .testimonial-card {
+    max-width: 100%;
   }
 }
 }

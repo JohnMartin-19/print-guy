@@ -630,7 +630,7 @@ const Home = (props) => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
-                    <h3 style={{marginBottom:"30px"}}>Follow Us</h3>
+                    <h3 style={{marginBottom:"10px"}}>Follow Us</h3>
                     <div className="icons">
                       <a href="https://facebook.com" target="_blank" rel="noreferrer">
                         <FaFacebookF />
