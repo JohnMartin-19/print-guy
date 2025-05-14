@@ -100,7 +100,10 @@ body{
 }
 
 /* Media query for mobile responsiveness */
-@media (max-width: 768px) {
+@media (min-width: 200px) and (max-width: 932px) {
+  .footer{
+    min-height: 60hv;
+  }
   .footer-row {
     flex-direction: column; /* Stack the columns vertically */
     align-items: flex-start;

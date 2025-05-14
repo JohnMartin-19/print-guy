@@ -21,6 +21,7 @@ import largePrint from '../assets/Elements-04.png'
 import smallPrint from '../assets/Elements-03.png'
 import threeD from '../assets/Elements-05.png'
 import cloth from '../assets/Elements-06.png'
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 
 
 const loadBootstrap = () => {
@@ -213,10 +214,10 @@ const Home = (props) => {
               font-weight: 100;
             }
 
-            .subtitle-text {
+            .header-text {
               color: white;
-              font-size:7rem;
-              font-weight: 1200;
+              font-size:4rem;
+              font-weight: 700;
             }
 
             .cta-button {
@@ -274,9 +275,9 @@ const Home = (props) => {
               <h4 className="welcome-text">Welcome to Print Guy</h4>
               <br />
               <span className="subtitle-text">
-                <h2 className="subtitle-text" id='header-text' style={{fontSize:'5rem'}}>Your One-Stop 
+                <h1 className="subtitle-text" id='header-text' >Your One-Stop 
                   <br />
-                  Advertising Solution!</h2>
+                  Advertising Solution!</h1>
               </span>
             </motion>
             <motion.div variants={itemVariants}>
@@ -588,6 +589,94 @@ const Home = (props) => {
           </div>
         </div>
       </motion.section>
+
+       <footer className="footer">
+            <div className="footer-container">
+              <motion.div
+                className="footer-details"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="footer-row">
+                  <div>
+                    <h3>  Location</h3>
+                    <p>
+                      Gaberone Plaza,
+                      <br/>
+                      Nairobi, Kenya.
+                    </p>
+                  </div>
+                  <div>
+                    <h3>Contacts</h3>
+                    <p>
+                       (+254) 0722333850 
+                       <br />
+                        (+254) 0722981403
+                    </p>
+                  </div>
+                  <div>
+                    <h3>Email</h3>
+                    <p>
+                      <a href="mailto:hello@printguy.co.ke">hello@printguy.co.ke</a> 
+                      <br />
+                       www.printguy.co.ke
+                    </p>
+      
+                  </div>
+                  <motion.div
+                    className="social-links"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
+                    <h3 style={{marginBottom:"30px"}}>Follow Us</h3>
+                    <div className="icons">
+                      <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                        <FaFacebookF />
+                      </a>
+                      <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                        <FaInstagram />
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noreferrer">
+                        <FaTiktok />
+                      
+                      </a>
+                      <a href="https://twitter.com" target="_blank" rel="noreferrer">
+                        <FaTwitter />
+                      </a>
+                      <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                        <FaLinkedinIn />
+                      </a>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+      
+              <motion.div
+                className="footer-line"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.5 }}
+              ></motion.div>
+      
+              <motion.div
+                className="footer-brand"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <strong>
+                <p>
+                   we <span className="heart">❤</span> brands
+                </p>
+                </strong>
+                <p>
+                  <h6>&copy; {new Date().getFullYear()} Printguy. All rights reserved.</h6>
+                </p>
+              </motion.div>
+            </div>
+          </footer>
 
       {/* WhatsApp Icon */}
       <a
