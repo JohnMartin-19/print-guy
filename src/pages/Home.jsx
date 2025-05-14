@@ -151,7 +151,7 @@ const Home = (props) => {
               <li><a href="#about-section" onClick={() => scrollToSection("about-section")}>About Us<FaAngleDown /></a></li>
               <li><a href="#services-section" onClick={() => scrollToSection("services-section")}>Services</a></li>
               <li><a href="#projects-section" onClick={() => scrollToSection("projects-section")}>Products<FaAngleDown /></a></li>
-              <li><a href="#contact-section" onClick={() => scrollToSection("contact-section")}>Contact</a></li> |
+              <li><a href="#contact-section" onClick={() => scrollToSection("footer")}>Contact</a></li> |
             </ul>
           </nav>
         </div>
@@ -590,7 +590,7 @@ const Home = (props) => {
         </div>
       </motion.section>
 
-       <footer className="footer">
+       <footer className="footer" id="footer">
             <div className="footer-container">
               <motion.div
                 className="footer-details"
