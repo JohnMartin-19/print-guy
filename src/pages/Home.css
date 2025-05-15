@@ -1258,7 +1258,7 @@ p {
     justify-content: space-between;
     align-items: flex-start;
     text-align: left;
-    gap: 10rem;
+    gap: 4rem;
     flex-wrap: wrap;
   }
 
@@ -1357,6 +1357,7 @@ p {
   align-items: center;
   gap: 1.5rem;
   width: 100%;
+  max-width: 90vw;
    /* Constrain content width on larger screens */
   margin: 0 auto; /* Remove excessive margin-top */
 }
