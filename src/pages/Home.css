@@ -1218,6 +1218,10 @@ p {
     z-index: 0;
     clip-path: inset(0 0 10.67% 0);
   }
+  #projects-section{
+    align-items: center;
+    margin-left: 10rem;
+  }
   .services-section{
     align-items: center;
     margin-left: 10rem;
