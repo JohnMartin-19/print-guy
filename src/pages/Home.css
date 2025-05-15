@@ -720,10 +720,10 @@ p {
 .speech-bubble::before {
   content: '';
   position: absolute;
-  top: -20px;
+  top: -10px;
   left: 0;
-  width: 60px;
-  height: 20px;
+  width: 100px;
+  height: 10px;
   background-color: #f7941d; /* Orange tab */
   border: 2px solid #f7941d;
   border-bottom: none;
@@ -1133,9 +1133,9 @@ p {
 }
 
 .ceo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 }
 
 /* Signature Styling */
@@ -1222,6 +1222,121 @@ p {
   .testimonials-title{
     margin-left: 10rem;
   }
+  .testimonials-section{
+    width: 100vw;
+  }
+  .footer {
+    background: #002060;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 2rem;
+    min-height: auto;
+    width: 100vw; /* Full viewport width */
+    overflow: hidden;
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove any auto margins that might constrain it */
+    padding: 0 1rem;
+    margin-left: 20rem; /* Add padding for content */
+  }
+
+  #footer-details {
+    width: 90vw;
+  }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-row div {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-row h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 0.5rem;
+    color: #ffa500;
+  }
+
+  .footer-row p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    margin: 0;
+    color: white;
+    line-height: 1.5;
+  }
+
+  .footer-row p a {
+    color: #ffa500;
+    text-decoration: none;
+  }
+
+  .footer-row p a:hover {
+    color: #e07b0e;
+  }
+
+  .social-links {
+    text-align: left;
+  }
+
+  .social-links h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin-bottom: 1rem;
+    color: #ffa500;
+  }
+
+  .icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .icons a {
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .icons a:hover {
+    color: #e07b0e;
+    transform: scale(1.2);
+  }
+
+  .footer-line {
+    width: 100vw;
+    height: 1px;
+    background-color: white;
+    margin: 1.5rem auto;
+  }
+
+  .footer-brand {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    color: white;
+  }
+
+  .footer-brand .heart {
+    color: #ffa500;
+    font-size: 1.2rem;
+  }
+
+  .footer-brand h6 {
+    margin: 0.5rem 0 0;
+    font-size: 0.8rem;
+  }
+  
   
 }
 .footer {
@@ -1242,7 +1357,7 @@ p {
   align-items: center;
   gap: 1.5rem;
   width: 100%;
-  max-width: 1200px; /* Constrain content width on larger screens */
+   /* Constrain content width on larger screens */
   margin: 0 auto; /* Remove excessive margin-top */
 }
 
@@ -1447,6 +1562,13 @@ p {
     text-align: center;
     margin-top:0px;
     margin-bottom: 10px;
+  }
+  .ceo-image{
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 20px auto;
   }
   .section-title {
     font-size: 2.5rem;

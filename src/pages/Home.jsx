@@ -591,9 +591,10 @@ const Home = (props) => {
       </motion.section>
 
        <footer className="footer" id="footer">
-            <div className="footer-container">
+            <div className="footer-container" id="footer-container">
               <motion.div
                 className="footer-details"
+                id="footer-details"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -655,9 +656,11 @@ const Home = (props) => {
       
               <motion.div
                 className="footer-line"
+                id="footer-line"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.5 }}
+                
               ></motion.div>
       
               <motion.div
@@ -667,12 +670,15 @@ const Home = (props) => {
                 transition={{ duration: 0.5 }}
               >
                 <strong>
-                <p>
+                <p style={{color:"white"}}>
                    we <span className="heart">❤</span> brands
                 </p>
                 </strong>
                 <p>
                   <h6>&copy; {new Date().getFullYear()} Printguy. All rights reserved.</h6>
+                </p>
+                <p>
+                  <h6><a href="mailto:johnnkonge2020@gmail.com">Contact Developer?</a></h6>
                 </p>
               </motion.div>
             </div>
