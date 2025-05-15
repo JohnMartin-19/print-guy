@@ -349,7 +349,7 @@ const Home = (props) => {
               variants={fadeInVariants}
             >
               <h2 className="header-why" style={{marginBottom:'10px',fontSize:'4rem' }}>
-                <span style={{color:'orange'}}>Why Choose </span>
+                <span style={{color:'#e07b0e'}}>Why Choose </span>
                 <br />
                 Printguy
               </h2>
