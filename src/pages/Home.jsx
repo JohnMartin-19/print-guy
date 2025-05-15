@@ -325,7 +325,7 @@ const Home = (props) => {
               <span className="signature-text">A. N Other, CEO & Founder</span>
             </div>
             <div className="image-container">
-              <img src={props.ceoImage} alt="CEO" className="ceo-image" />
+              <img src={pgman} alt="CEO" className="ceo-image" />
             </div>
           </motion.div>
         </div>
@@ -562,29 +562,37 @@ const Home = (props) => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="testimonials-title" style={{ color: "#f7941d"}}>
+        <h2 className="testimonials-title" id="testimonials-title" style={{ color: "#f7941d"}}>
           What our Clients <br />
           Say about us
         </h2>
         <div className="testimonials-container">
           <div className="testimonial-card">
             <div className="speech-bubble"></div>
-            <div className="avatar"></div>
+            <div className="av">
+            <img src={pgman} alt="CEO" className="ceo-image" />
+            </div>
             <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
           </div>
           <div className="testimonial-card">
             <div className="speech-bubble"></div>
-            <div className="avatar"></div>
+            <div className="av">
+            <img src={pgman} alt="CEO" className="ceo-image" />
+            </div>
             <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
           </div>
           <div className="testimonial-card">
             <div className="speech-bubble"></div>
-            <div className="avatar"></div>
+            <div className="av">
+            <img src={pgman} alt="CEO" className="ceo-image" />
+            </div>
             <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
           </div>
           <div className="testimonial-card">
             <div className="speech-bubble"></div>
-            <div className="avatar"></div>
+            <div className="av">
+            <img src={pgman} alt="CEO" className="ceo-image" />
+            </div>
             <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
           </div>
         </div>

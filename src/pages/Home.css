@@ -749,6 +749,9 @@ p {
   border-radius: 50%;
   margin: 20px auto;
 }
+.av{
+  margin: 15px auto;
+}
 
 .testimonial-text {
   font-size: 1rem;
@@ -1568,7 +1571,7 @@ p {
     width: 50px;
     height: 50px;
     background-color: #000;
-    border-radius: 50%;
+    border-radius: 100%;
     margin: 20px auto;
   }
   .section-title {
@@ -1604,9 +1607,10 @@ p {
   .projects-title {
     font-size: 2.5rem;
   }
-  .testimonials-title {
+  #testimonials-title {
     font-size: 2.5rem;
     text-align: center;
+    margin: 0 auto;
     
   }
   /*styling the mobile view for projects*/
