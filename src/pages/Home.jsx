@@ -241,7 +241,7 @@ const Home = (props) => {
               flex: 0 0 100%;
               height: 100%;
               min-height:60vh;
-              border-radius:0px;
+              
             }
 
             .hero-image {
