@@ -568,28 +568,42 @@ const Home = (props) => {
         </h2>
         <div className="testimonials-container">
           <div className="testimonial-card">
-            <div className="speech-bubble"></div>
+            <div className="speech-bubble">
+              <p className="testimony"><small>
+              “Printguy's attention to detail and dedication to quality are truly commendable. They brought our vision to life with exceptional print solutions.”</small></p>
+            </div>
             <div className="av">
             <img src={pgman} alt="CEO" className="ceo-image" />
             </div>
             <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
           </div>
           <div className="testimonial-card">
-            <div className="speech-bubble"></div>
+            <div className="speech-bubble">
+              <p className="testimony">
+              <small>“We have partnered with Printguy for multiple projects, and each time they have delivered outstanding results. ”</small></p>
+            </div>
             <div className="av">
             <img src={pgman} alt="CEO" className="ceo-image" />
             </div>
             <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
           </div>
           <div className="testimonial-card">
-            <div className="speech-bubble"></div>
+            <div className="speech-bubble">
+              <p className="testimony">
+              “Printguy's professionalism and creativity have made them our go-to print design firm. They consistently deliver top-notch results.”
+              </p>
+            </div>
             <div className="av">
             <img src={pgman} alt="CEO" className="ceo-image" />
             </div>
             <p className="testimonial-text">A. N Other<br /><span style={{ color: "#002060" }}>CEO & Founder</span></p>
           </div>
           <div className="testimonial-card">
-            <div className="speech-bubble"></div>
+            <div className="speech-bubble">
+            <p className="testimony">
+              “Printguy's professionalism and creativity have made them our go-to print design firm. They consistently deliver top-notch results.”
+              </p>
+            </div>
             <div className="av">
             <img src={pgman} alt="CEO" className="ceo-image" />
             </div>

@@ -710,12 +710,16 @@ p {
   position: relative;
   width: 250px;
   height: 150px;
+  font-size: 3px;
   background-color: white;
   border: 2px solid #f7941d; /* Orange border matching your theme */
   border-radius: 0; /* No rounding for sharp edges */
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
+}
+.testimony{
+  font-size: 15px;
 }
 .speech-bubble::before {
   content: '';
